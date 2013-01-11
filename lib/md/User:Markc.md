@@ -1,18 +1,6 @@
 User:Markc
 ==========
 
-Contents
---------
-
--   [1 2009-04-24 two alsa wikis?](#2009-04-24_two_alsa_wikis.3F)
--   [2 2007-02-23 - Licence](#2007-02-23_-_Licence)
--   [3 2007-02-20 - Categories](#2007-02-20_-_Categories)
--   [4 2007-02-11 - ALSA
-    documentation](#2007-02-11_-_ALSA_documentation)
--   [5 2007-02-12 - Your user page](#2007-02-12_-_Your_user_page)
--   [6 2007-01-11 - External links](#2007-01-11_-_External_links)
--   [7 2007-01-05 - Mysql errors](#2007-01-05_-_Mysql_errors)
-
 2009-04-24 two alsa wikis?
 --------------------------
 
@@ -37,7 +25,7 @@ any serious interest in helping to merge them, and most importantly
 there are a significant number of offsite referers and Google hits that
 come directly to this site because it's been here for so long. All
 points could be worked through with a significant amount of effort from
-what would have to be a focussed \`\`\`team effort\`\`\`, which I see no
+what would have to be a focussed **team effort**, which I see no
 sign of happening, and at the end of the day is it all that bad that
 this site also exists?
 
@@ -239,8 +227,6 @@ are really interested in and change the wiki structure accordingly.
 [Ingomueller.net](/User:Ingomueller.net "User:Ingomueller.net") 07:16, 5
 January 2007 (EST): I keep getting this error when submitting changes
 from a page:
-
-` `
 
     Database error
     From the ALSA wiki
