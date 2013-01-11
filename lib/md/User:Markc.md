@@ -1,9 +1,5 @@
-User talk:Markc
-===============
-
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
+User:Markc
+==========
 
 Contents
 --------
@@ -31,7 +27,7 @@ to make the difference clearer.
 [Qubodup](?title=User:Qubodup&action=edit&redlink=1 "User:Qubodup (page does not exist)")
 02:07, 25 April 2009 (EST)
 
-[markc](/User:Markc "User:Markc") 04:41, 25 April 2009 (EST): thanks for
+[markc](User:Markc "User:Markc") 04:41, 25 April 2009 (EST): thanks for
 the logos, great idea and very much appreciated. Some of the reasons
 this site remains in existence are, no one from the official ALSA site
 has ever contributed anything to this site (before the official one
