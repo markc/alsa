@@ -27,7 +27,7 @@ to make the difference clearer.
 [Qubodup](?title=User:Qubodup&action=edit&redlink=1 "User:Qubodup (page does not exist)")
 02:07, 25 April 2009 (EST)
 
-[markc](User:Markc "User:Markc") 04:41, 25 April 2009 (EST): thanks for
+[markc] 04:41, 25 April 2009 (EST): thanks for
 the logos, great idea and very much appreciated. Some of the reasons
 this site remains in existence are, no one from the official ALSA site
 has ever contributed anything to this site (before the official one
@@ -294,9 +294,4 @@ update...
 using the RSS feed via aKregator for KDE and it works. I'll check it
 with FF and TB and see if I can pick up the exact error.
 
-Retrieved from
-"[http://alsa.opensrc.org/User\_talk:Markc](http://alsa.opensrc.org/User_talk:Markc)"
-
-[Category](/Special:Categories "Special:Categories"): [Sound
-cards](/Category:Sound_cards "Category:Sound cards")
-
+[markc]: /alsa/User:Markc
