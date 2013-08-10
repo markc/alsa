@@ -1,9 +1,4 @@
-ALSA
-====
-
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
+# ALSA
 
 **ALSA** stands for **A**dvanced **L**inux **S**ound **A**rchitecture.
 It is a suite of hardware drivers, libraries and utilities which provide
@@ -42,9 +37,6 @@ More features according to its users:
 -   ALSA System on Chip layer to support Embedded audio devices
 
 mail joachim (js ATT dune2 DoTT de)
-
-Retrieved from
-"[http://alsa.opensrc.org/ALSA](http://alsa.opensrc.org/ALSA)"
 
 [Categories](/Special:Categories "Special:Categories"):
 [Software](/Category:Software "Category:Software") |
