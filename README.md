@@ -1,5 +1,5 @@
-This is an attempt to transcribe the Mediawiki formatted entries currently at
-[alsa.opensrc.org] into Markdown format so they can be managed via Github.
-Updates and suggestions can be made via the Issues link for this repo.
+# alsa.opensrc.org
 
-[alsa.opensrc.org]: http://alsa.opensrc.org
+This is a Markdown conversion of the old MediaWiki based system at
+http://alsa.opensrc.org. Feel free to fork and send pull requests for
+content updates or bugs and suggestions via the issue tracker.
