@@ -1,6 +1,6 @@
 # Readme
 
-## 2013-08-11 - Conversion to Github
+### 2013-08-11 - Conversion to Markdown at Github
 
 _[Mark Constable]:_ This is a crude re-rendering of the MediaWiki contents
 using Markdown formatted files and Github for project and user management.
