@@ -2,6 +2,8 @@
 // github-post-receive.php 20130810
 // https://gist.github.com/samdark/3752870
 
+error_log(var_export($_REQUEST,true));
+
 function cidr_match($ip, $ranges)
 {
     $ranges = (array)$ranges;
