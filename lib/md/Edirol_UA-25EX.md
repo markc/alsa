@@ -16,9 +16,9 @@ The Edirol UA-25EX is a good quality audio device, with great features:
 - Full-duplex management
 - MIDI I/O
 
-The Edirol UA-25EX is similar in every point to the [Edirol UA-25]
-(/Edirol_UA-25 "Edirol UA-25") with the addition of an analog compressor. This
-device has 2 modes:
+The Edirol UA-25EX is similar in every point to the [Edirol
+UA-25](/Edirol_UA-25 "Edirol UA-25") with the addition of an analog
+compressor. This device has 2 modes:
 
 - Standards-compliant: the device is recognised by the `snd_usb_audio`
   module and you can play and record at 44.1kHz and 16-bit samples. MIDI is
@@ -37,36 +37,36 @@ over other sound systems.
 
 ## Contents
 
--   [1 Understanding the Edirol UA-25EX logic](#a1.0)
-    -   [1.1 Advance button](#a1.1)
-    -   [1.2 Sample rates switch](#a1.2)
-    -   [1.3 REC/PLAY button](#a1.3)
-    -   [1.4 Cold/Hot reboot](#a1.4)
-    -   [1.5 Lost?](#a1.5)
--   [2 Basic Alsa configuration](#a2.0)
-    -   [2.1 Assigning audio system rights](#a2.1)
-    -   [2.2 Naming the Edirol UA-25EX device](#a2.2)
-    -   [2.3 Testing sound output](#a2.3)
-    -   [2.4 Playing sound](#a2.4)
-    -   [2.5 Recording sound](#a2.5)
--   [3 Advanced Alsa configuration](#a3.0)
-    -   [3.1 Full-duplex mode](#a3.1)
-    -   [3.2 Custom softvol PCM](#a3.2)
-    -   [3.3 Recording left and right input channels seperately](#a3.3)
-    -   [3.4 Digital signals](#a3.4)
-        -   [3.4.1 Digital In](#a3.4.1)
-        -   [3.4.2 Digital Out](#a3.4.2)
--   [4 MIDI configuration](#a4.0)
-    -   [4.1 MIDI ports](#a4.1)
-    -   [4.2 Connecting an external MIDI controller](#a4.2)
-    -   [4.3 Connecting an external MIDI synthesizer](#a4.3)
--   [5 Resulting .asoundrc file](#a5.0)
--   [6 Device information](#a6.0)
-    -   [6.1 cat/proc/bus/usb/devices](#a6.1)
-    -   [6.2 cat /proc/asound/devices](#a6.2)
-    -   [6.3 cat /proc/asound/cards](#a6.3)
-    -   [6.4 aplay -l](#a6.4)
-    -   [6.4 aplay -L](#a6.5)
+- [1 Understanding the Edirol UA-25EX logic](#a1.0)
+  - [1.1 Advance button](#a1.1)
+  - [1.2 Sample rates switch](#a1.2)
+  - [1.3 REC/PLAY button](#a1.3)
+  - [1.4 Cold/Hot reboot](#a1.4)
+  - [1.5 Lost?](#a1.5)
+- [2 Basic Alsa configuration](#a2.0)
+  - [2.1 Assigning audio system rights](#a2.1)
+  - [2.2 Naming the Edirol UA-25EX device](#a2.2)
+  - [2.3 Testing sound output](#a2.3)
+  - [2.4 Playing sound](#a2.4)
+  - [2.5 Recording sound](#a2.5)
+- [3 Advanced Alsa configuration](#a3.0)
+  - [3.1 Full-duplex mode](#a3.1)
+  - [3.2 Custom softvol PCM](#a3.2)
+  - [3.3 Recording left and right input channels seperately](#a3.3)
+  - [3.4 Digital signals](#a3.4)
+    - [3.4.1 Digital In](#a3.4.1)
+    - [3.4.2 Digital Out](#a3.4.2)
+- [4 MIDI configuration](#a4.0)
+  - [4.1 MIDI ports](#a4.1)
+  - [4.2 Connecting an external MIDI controller](#a4.2)
+  - [4.3 Connecting an external MIDI synthesizer](#a4.3)
+- [5 Resulting .asoundrc file](#a5.0)
+- [6 Device information](#a6.0)
+  - [6.1 cat/proc/bus/usb/devices](#a6.1)
+  - [6.2 cat /proc/asound/devices](#a6.2)
+  - [6.3 cat /proc/asound/cards](#a6.3)
+  - [6.4 aplay -l](#a6.4)
+  - [6.4 aplay -L](#a6.5)
 
 
 ## Understanding the Edirol UA-25EX logic <a name="a1.0"></a>
@@ -81,12 +81,12 @@ On the back pane of the UA-25EX, there is a switch button called
 "ADVANCE", which controls the USB mode of the device. The switch has two
 values: ON and OFF:
 
-- In advance mode (ADVANCE button ON), the UA-25EX can record or play
+- In **advance mode** (ADVANCE button ON), the UA-25EX can record or play
   sound in native 24 bits, in either 44.100 Hz, 48.000 Hz or 96.000 Hz
   sample rates. You can choose sample rates using a button. At 96 Khz, the
   device is either capture or playback only. MIDI is enabled. Advance mode
   is recognised since Alsa 1.0.7.
-- In normal mode (ADVANCE button OFF), the UA-25EX is fully USB sound
+- In **normal mode** (ADVANCE button OFF), the UA-25EX is fully USB sound
   compliant. It records at the rate of 44.100 Hz, in 16 bits, and is full-
   duplex. MIDI is disabled.
 
@@ -157,7 +157,7 @@ Enter the administrator password and then:
 
     # adduser my_username audio
 
-Will add the user *my\_username* (replace with your username) to the audio
+Will add the user **my\_username** (replace with your username) to the audio
 group. After logging out and back in again, you should be able to play music.
 
 
@@ -167,7 +167,7 @@ If the UA-25EX is the only device of your computer, you can address the device
 using the `plughw:0,0`, but it is not very convenient. We recommend using the
 alphanumeric name of the device. To query the name of your device, type:
 
-    $cat /proc/asound/cards
+    $ cat /proc/asound/cards
      0 [UA25EX         ]: USB-Audio - EDIROL UA-25EX
                          Roland EDIROL UA-25 at usb-0000:00:0b.0-2, full speed
      1 [Audio          ]: USB-Audio - USB Audio
@@ -178,7 +178,7 @@ Here, you should use `plughw:UA25EX` rather than `plughw:0,0`
 
 ### Testing sound output <a name="a2.3"></a>
 
-Test the card output. This command plays a woman voice on 2 channels ("Front
+Test the card output. This command plays a womans voice on 2 channels ("Front
 Right", "Front Left"):
 
     speaker-test -c2 -D plughw:UA25EX -twav
@@ -190,11 +190,11 @@ In the following example, Advance button is set to ON, and sample rate is 48
 Khz. Do not forget to cold/hot reboot whenever you change settings. To play a
 sound:
 
-    aplay -D plughw:UA25EX foo.wav
+    $ aplay -D plughw:UA25EX foo.wav
 
 For a better understanding, it is recommended to play in verbose mode:
 
-    aplay -v -D plughw:UA25EX foo.wav
+    $ aplay -v -D plughw:UA25EX foo.wav
 
 The following message is displayed:
 
@@ -285,7 +285,7 @@ The sound file is 8.000 Hz sample rate over 8 bits. Alsa converts it to 48.000
 Hz over 24 bits... and plays the sound. When playing two sounds at the same
 time, an error message is displayed:
 
-    aplay: main:550: audio open error: Device or resource busy
+    $ aplay: main:550: audio open error: Device or resource busy
 
 Remember, in advance mode, the UA-25EX is only half-duplex.
 
@@ -296,11 +296,11 @@ In this example, the UA-25EX device is set to Advance ON and 96 Khz recording.
 REC button is pressed. You can use arecord utility, which is part of Alsa
 package, to record any sound from the microphone:
 
-    arecord -r 96000 -f cd -t wav -D plughw:UA25EX foobar.wav
+    $ arecord -r 96000 -f cd -t wav -D plughw:UA25EX foobar.wav
 
 For a better understanding, try the same command in verbose mode:
 
-    arecord -v -r 96000 -f cd -t wav -D plughw:UA25EX foobar.wav
+    $ arecord -v -r 96000 -f cd -t wav -D plughw:UA25EX foobar.wav
 
 The resulting message: `Recording WAVE 'foobar.wav' : Signed 16 bit Little
 Endian, Rate 44100 Hz, Stereo Plug PCM: Rate conversion PCM (96000,
@@ -357,14 +357,14 @@ Slave: Hardware PCM card 1 'UA-25EX' device 0 subdevice 0 Its setup is:
 The Edirol UA-25EX is able to record in 24 bits, at the sample rate of 96 Khz.
 Now, try to play the recorded sound at 96 Khz:
 
-    aplay -v -D plughw:UA25EX foobar.wav
-    aplay: main:550: audio open error: No such file or directory
+    $ aplay -v -D plughw:UA25EX foobar.wav
+    $ aplay: main:550: audio open error: No such file or directory
 
 At 96.000 Hz, the audio device can play OR record, but not both. Now, switch
 the PLAY button. Unplug the USB cord and plug it again. This should initialize
 Alsa if you are using Udev and hotplug. Re-try to play the sound:
 
-    aplay -v -D plughw:UA25EX foobar.wav
+    $ aplay -v -D plughw:UA25EX foobar.wav
 
 This results in:
 
@@ -428,8 +428,8 @@ not both.
 
 The recommended settings in this HOWTO are now:
 
--   Advance mode : ON
--   Sample rate : 44,1 Khz
+- Advance mode : ON
+- Sample rate : 44,1 Khz
 
 This will record/play sound in 24 bits, at the frequency of 44.100 Hz.
 
@@ -445,7 +445,7 @@ and [dsnoop](/Dsnoop "Dsnoop") (i.e. record) plug-ins.
 
 ### Custom softvol PCM <a name="a3.2"></a>
 
-Using mixer settings on card 0 will return:
+Using mixer settings on `card 0` will return:
 
     $ alsamixer -c 0
     no mixer elems found
@@ -457,30 +457,30 @@ Fortunately, Alsa offers the [softvol](/Softvol "Softvol")
 will also define this control as the default mixer. Here is my first try:
 
     pcm.!default {
-       type             plug
-       slave.pcm       "softvol"
+        type plug
+        slave.pcm "softvol"
     }
     pcm.softvol {
-       type            softvol
-       slave {
-           pcm         "pasymed"
-       }
-       control {
-           name        "SoftMaster"
-           card        0
-       }
+        type softvol
+        slave {
+            pcm "pasymed"
+        }
+        control {
+            name "SoftMaster"
+            card 0
+        }
     }
 
 Let us have a look at our software mixer:
 
-     $ amixer
-     Simple mixer control 'SoftMaster',0
-     Capabilities: volume
-     Playback channels: Front Left - Front Right
-     Capture channels: Front Left - Front Right
-     Limits: 0 - 255
-     Front Left: 255 [100%]
-     Front Right: 255 [100%]
+    $ amixer
+    Simple mixer control 'SoftMaster',0
+    Capabilities: volume
+    Playback channels: Front Left - Front Right
+    Capture channels: Front Left - Front Right
+    Limits: 0 - 255
+    Front Left: 255 [100%]
+    Front Right: 255 [100%]
 
 
 ### Recording left and right input channels seperately <a name="a3.3"></a>
@@ -496,22 +496,22 @@ seperately](/Dsnoop#Recording_from_left_or_right_channel "Dsnoop"), as
 explained in the [dsnoop](/Dsnoop "Dsnoop") howto.
 
     pcm.record_left {
-       type        dsnoop
-       ipc_key 234884
-       slave {
-           pcm     "plughw:UA25EX"
-           channels 2
-       }
-       bindings.0  0
+        type dsnoop
+        ipc_key 234884
+        slave {
+            pcm "plughw:UA25EX"
+            channels 2
+        }
+        bindings.0 0
     }
     pcm.record_right {
-       type        dsnoop
-       ipc_key 2241234
-       slave {
-           pcm     "plughw:UA25EX"
-           channels 2
-       }
-       bindings.0  1
+        type dsnoop
+        ipc_key 2241234
+        slave {
+            pcm "plughw:UA25EX"
+            channels 2
+        }
+        bindings.0 1
     }
 
 
@@ -534,26 +534,26 @@ Hz digital output.
 
 Let us try Alsa utility [speaker-test](/Speaker-test "Speaker-test"):
 
-    speaker-test -c 2 -D softvol0 -twav
+    $ speaker-test -c 2 -D softvol0 -twav
 
 An optical cable is connected:
 
--   from Edirol UA-25EX Digital out
--   to a Terratec USB Aureon MK-2 digital in.
+- from Edirol UA-25EX Digital out
+- to a Terratec USB Aureon MK-2 digital in.
 
 In the mixer of the Terratec Aureon, I select `Input 2` and check `IEC958 In`.
 I can record the digital stream using the following command:
 
-    arecord -v -f S16_LE -c 2 -D plughw:1,0 foobar.wav
+    $ arecord -v -f S16_LE -c 2 -D plughw:1,0 foobar.wav
 
 I can record the digital out stream of the Edirol UA-25EX without problem.
 
 
 ## MIDI configuration <a name="a4.0"></a>
 
-For MIDI to work, the device has to be in [advance mode](/Edirol_UA-
-25EX#Advance_button "Edirol UA-25EX"). If MIDI is working, you should see a
-"raw midi" device for the UA-25EX in /proc/asound/devices:
+For MIDI to work, the device has to be in [advance mode](/Edirol_UA-25EX#a1.1
+"Edirol UA-25EX"). If MIDI is working, you should see a "raw midi" device for
+the UA-25EX in /proc/asound/devices:
 
     $ grep midi /proc/asound/devices
       8: [ 0- 0]: raw midi
