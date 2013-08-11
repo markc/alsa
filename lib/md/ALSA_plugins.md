@@ -1,9 +1,6 @@
 ALSA plugins
 ============
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
 
 This is a list of [ALSA](/ALSA "ALSA") plugins. Plugins are used to
 create virtual devices that can be used like normal hardware devices but
@@ -46,11 +43,4 @@ See also
 -   [http://www.alsa-project.org/alsa-doc/alsa-lib/pcm\_plugins.html](http://www.alsa-project.org/alsa-doc/alsa-lib/pcm_plugins.html)
 -   [.asoundrc](/.asoundrc ".asoundrc")
 -   [Plugin Documentation](/Plugin_Documentation "Plugin Documentation")
-
-Retrieved from
-"[http://alsa.opensrc.org/ALSA\_plugins](http://alsa.opensrc.org/ALSA_plugins)"
-
-[Categories](/Special:Categories "Special:Categories"): [ALSA
-plugins](/Category:ALSA_plugins "Category:ALSA plugins") |
-[Configuration](/Category:Configuration "Category:Configuration")
 

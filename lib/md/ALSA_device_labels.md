@@ -1,10 +1,6 @@
 ALSA device labels
 ==================
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 When you issue commands such as `aplay` or `arecord`, the commands may
 need to be told which ALSA devices you want them to use.
 
@@ -24,8 +20,6 @@ default (which in a vanilla 1.0.11 configuration is a
 You can get a list of all available playback pcm devices along with
 their definitions by using the command
 
-` `
-
     aplay -L
 
 **See also:**
@@ -36,11 +30,5 @@ their definitions by using the command
 -   [Proc asound
     documentation](/Proc_asound_documentation "Proc asound documentation")
 -   [Some notes on dealing with /proc from
-    Takashi](/AlsaTips#Some_notes_on_dealing_with_.2Fproc_from_Takashi_.282.29 "AlsaTips")
-
-Retrieved from
-"[http://alsa.opensrc.org/ALSA\_device\_labels](http://alsa.opensrc.org/ALSA_device_labels)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Documentation](/Category:Documentation "Category:Documentation")
+    Takashi](/AlsaTips "AlsaTips")
 

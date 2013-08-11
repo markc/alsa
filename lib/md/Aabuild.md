@@ -1,15 +1,9 @@
 Aabuild
 =======
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 This is a bash shell script to build and install the latest ALSA from
 the Mercury (HG) repositories. The old aabuild script is left below to
 provide some possible clues when dealing with a kernel and jack.
-
-` `
 
     #!/bin/bash
     # aabuild v0.1.0 20070926 markc@renta.net GPL
@@ -50,8 +44,6 @@ down to "\# The End" as PLAIN TEXT, perhaps by dragging your mouse,
 paste into a local editor and save to a file called aabuild in
 */usr/src* (suggestions only).
 
-` `
-
     chmod +x aabuild ; aabuild
 
 *Feedback and edits are most welcome.*
@@ -61,8 +53,6 @@ this because I have a 64bit system so the realtime-patch does not work
 for me. If anyone tries this out please update it for others to use.
 Uncomment the process options at the bottom of the script to activate
 the various stages.
-
-` `
 
     #!/bin/sh
     #
@@ -290,10 +280,4 @@ the various stages.
     #make_tarball
 
     # The End
-
-Retrieved from
-"[http://alsa.opensrc.org/Aabuild](http://alsa.opensrc.org/Aabuild)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Installation](/Category:Installation "Category:Installation")
 

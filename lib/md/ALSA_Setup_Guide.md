@@ -1,14 +1,10 @@
 ALSA Setup Guide
 ================
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 [ToDo]: include base information common for all the distros ( we can use
 the simulation package installation; i.e. instead of use!
 
-    apt-get install alsa-utils 
+    apt-get install alsa-utils
 
 we can use
 
@@ -33,10 +29,4 @@ Has some general description of using with the now dying DEVFS (kernel
 the default) will generally just work first time, as the insersion of
 the sound modules creates hotplug events which cause udev to create the
 device nodes.
-
-Retrieved from
-"[http://alsa.opensrc.org/ALSA\_Setup\_Guide](http://alsa.opensrc.org/ALSA_Setup_Guide)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Installation](/Category:Installation "Category:Installation")
 

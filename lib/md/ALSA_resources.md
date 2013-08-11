@@ -1,10 +1,6 @@
 ALSA resources
 ==============
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 This is a collection of other resources about [ALSA](/ALSA "ALSA") than
 this wiki.
 
@@ -157,7 +153,4 @@ for completeness' sake. Feel free to remove.
 -   Reverb links
     -   [http://altiverb.daw-mac.com/library.html](http://altiverb.daw-mac.com/library.html)
     -   [http://pcangelo.ramsete.com/Public/IMP-RESP/](http://pcangelo.ramsete.com/Public/IMP-RESP/)
-
-Retrieved from
-"[http://alsa.opensrc.org/ALSA\_resources](http://alsa.opensrc.org/ALSA_resources)"
 

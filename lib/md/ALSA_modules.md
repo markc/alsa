@@ -1,10 +1,6 @@
 ALSA modules
 ============
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 This is a list of [ALSA](/ALSA "ALSA") kernel modules. On these pages,
 you might find a solution specific to the module you use for your sound
 card. If you solved another problem specific to a module, please add the
@@ -172,10 +168,4 @@ See also
     soundcard and links to module specific doc pages.
 -   [AlsaModules](/AlsaModules "AlsaModules") - A small script that
     provides some ALSA module related information
-
-Retrieved from
-"[http://alsa.opensrc.org/ALSA\_modules](http://alsa.opensrc.org/ALSA_modules)"
-
-[Category](/Special:Categories "Special:Categories"): [ALSA
-modules](/Category:ALSA_modules "Category:ALSA modules")
 

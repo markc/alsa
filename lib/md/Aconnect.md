@@ -1,17 +1,11 @@
 Aconnect
 ========
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 aconnect - ALSA sequencer connection manager, Copyright (C) 1999-2000
 Takashi Iwai
 
 Usage
 -----
-
-` `
 
        Usage:
         * Connection/disconnection betwen two ports
@@ -45,8 +39,6 @@ set up with **aconnect 64:0 129:0** to be able to play a
 [GigaSampler](/GigaSampler "GigaSampler") piano sound font via
 LinuxSampler. The MusE settings were setup from within the MusE program
 itself.
-
-` `
 
        # aconnect -lio
        client 0: 'System' [type=kernel]
@@ -85,10 +77,3 @@ A simplistic guideline for the client numbers used above is...
 -   128..?: user applications
 
 (thanks to Clemens Ladisch on the alsa-users mailing-list)
-
-Retrieved from
-"[http://alsa.opensrc.org/Aconnect](http://alsa.opensrc.org/Aconnect)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Alsa-utils](/Category:Alsa-utils "Category:Alsa-utils")
-

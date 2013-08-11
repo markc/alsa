@@ -1,10 +1,6 @@
 Aadebug
 =======
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 This is a simple shell script to aid ALSA audio debugging. If you are
 requesting help on the mailing list or at a friend, it's output may be
 very usefull. To use it, copy and paste the code below into an editor
@@ -14,8 +10,6 @@ person who is going to help you.
 
 The script
 ----------
-
-` `
 
     #!/bin/bash
 
@@ -109,23 +103,12 @@ may help. You may need to change to the root user, if so then type
 the script, type `control-d` to return to your normal user identity. You
 can capture the output to a file by typing...
 
-` `
-
     aadebug > aadebug.txt 2>&1
 
 The `2>&1` will ensure that any error messages are also captured to the
 `aadebug.txt` output file. If you want to get really fancy you could do
 something like...
 
-` `
-
     aadebug | mail -s"My aadebug output" to@someone
 
 if you system is set up to allow this.
-
-Retrieved from
-"[http://alsa.opensrc.org/Aadebug](http://alsa.opensrc.org/Aadebug)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Software](/Category:Software "Category:Software")
-

@@ -35,6 +35,7 @@ $html .= "\n";
     <meta name="author" content="">
     <title>alsa.opensrc.org</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://gist.github.com/andyferra/2554919/raw/2e66cabdafe1c9a7f354aa2ebf5bc38265e638e5/github.css" rel="stylesheet">
     <style>
 body { padding-top: 60px; overflow-y: scroll; }
 .jumbotron { margin-top: 20px; }
