@@ -39,6 +39,7 @@ $html .= "\n";
     <style>
 body { padding-top: 60px; overflow-y: scroll; }
 .jumbotron { margin-top: 20px; }
+h2 { border-bottom: 1px solid #EFEFEF; }
     </style>
   </head>
   <body>
