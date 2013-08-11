@@ -1,5 +1,8 @@
-Edirol UA-25EX
-==============
+# Edirol UA-25EX
+
+![UA-25EX](http://www.roland.com/products/en/UA-25EX/images/top_L.jpg "Edirol UA-25EX")
+
+[http://www.roland.com/products/en/UA-25EX/](http://www.roland.com/products/en/UA-25EX/)
 
 The Edirol UA-25EX is a good quality audio device, with great features:
 
@@ -23,11 +26,7 @@ This device has 2 modes:
     module and you can play and record at 44.1kHz and 16-bit samples.
     MIDI is not supported in this mode.
 -   advanced mode: full support for 24-bit playback, recording at rates
-    up to 96 kHz, and MIDI. On kernels prior to
-    [2.6.30](http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.6.30.y.git;a=commit;h=e2736261b4c85e36f7c8a66dd082ec0751230460),
-    you need the [patch
-    below](/Edirol_UA-25EX#Getting_Advanced_mode_to_work "Edirol UA-25EX")
-    for 'advanced mode' to work.
+    up to 96 kHz, and MIDI.
 
 * * * * *
 
@@ -41,8 +40,8 @@ To mitigate this limitation, Alsa offers a variety of features and
 the missing features. This is the advantage of Alsa over other sound
 systems.
 
-Contents
---------
+
+## Contents
 
 -   [1 Understanding the Edirol UA-25EX logic](#a1.0)
     -   [1.1 Advance button](#a1.1)
@@ -74,8 +73,6 @@ Contents
     -   [6.2 cat /proc/asound/devices](#a6.2)
     -   [6.3 cat /proc/asound/cards](#a6.3)
     -   [6.4 aplay -l](#a6.4)
--   [7 Getting Advanced mode to work](#a7.0)
--   [8 See also](#a8.0)
 
 
 ## Understanding the Edirol UA-25EX logic <a name="a1.0"></a>
@@ -829,61 +826,3 @@ references to my second soundcard HDA Intel):
       UA-25EX, USB Audio
       IEC958 (S/PDIF) Digital Audio Output
 
-
-## Getting Advanced mode to work <a name="a7.0"></a>
-
-This patch is only needed for kernels prior to
-[2.6.30](http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.6.30.y.git;a=commit;h=e2736261b4c85e36f7c8a66dd082ec0751230460)
-
-Basing my work on the patch for the [Edirol UA-4FX](/Edirol_UA-4FX "Edirol UA-4FX"),
-I created the following patch for the Edirol UA-25EX, tested on linux-2.6.25:
-
-    Add Alsa support for Roland Edirol UA-25EX in Advanced mode
-    (for MIDI support and sample rates of 48 kHz and 96 kHz)
-    usbquirks.h
-    ===================================================================
-    diff -u sound/usb/usbquirks.h.00 sound/usb/usbquirks.h
-    --- sound/usb/usbquirks.h.00    2007-11-28 02:15:11.000000000 -0700
-    +++ sound/usb/usbquirks.h   2007-11-28 02:17:51.000000000 -0700
-    @@ -1311,6 +1311,37 @@
-        }
-     },
-        /* TODO: add Edirol MD-P1 support */
-    +{  /*
-    +    * This quirk is for the "Advanced" modes of the Edirol UA-25EX.
-    +    * If the switch is not in an advanced setting, the UA-25EX has
-    +    * ID 0x0582/0x00a4 and is standard compliant (no quirks), but
-    +    * offers only 16-bit PCM at 44.1 kHz and no MIDI.
-    +    */
-    +   USB_DEVICE_VENDOR_SPEC(0x0582, 0x00e6),
-    +   .driver_info = (unsigned long) & (const struct snd_usb_audio_quirk) {
-    +       .vendor_name = "EDIROL",
-    +       .product_name = "UA-25EX",
-    +       .ifnum = QUIRK_ANY_INTERFACE,
-    +       .type = QUIRK_COMPOSITE,
-    +       .data = (const struct snd_usb_audio_quirk[]) {
-    +           {
-    +               .ifnum = 0,
-    +               .type = QUIRK_AUDIO_EDIROL_UA700_UA25
-    +           },
-    +           {
-    +               .ifnum = 1,
-    +               .type = QUIRK_AUDIO_EDIROL_UA700_UA25
-    +           },
-    +           {
-    +               .ifnum = 2,
-    +               .type = QUIRK_AUDIO_EDIROL_UA700_UA25
-    +           },
-    +           {
-    +               .ifnum = -1
-    +           }
-    +       }
-    +   }
-    +},
-     {
-        /* Roland SH-201 */
-        USB_DEVICE(0x0582, 0x00ad),
-
-## See also <a name="a8.0"></a>
--   vendor link:
-    [http://www.edirol.net/products/en/UA-25EX/](http://www.edirol.net/products/en/UA-25EX/)

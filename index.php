@@ -2,13 +2,20 @@
 // bootstrap_markdown 20130811 (C) Mark Constable (AGPL-3.0)
 // A simple script to render Markdown files within a Bootstrap3 contianer.
 
-$page = isset($_GET['q']) ? htmlspecialchars(trim($_GET['q'], '/')) : '';
+define('TITLE', 'alsa.opensrc.org');
 
 require 'lib/php/Markdown.php';
 use \Michelf\Markdown;
 
+$page = isset($_GET['q']) ? htmlspecialchars(trim($_GET['q'], '/')) : '';
+
 if ($page) {
-    $html = Markdown::defaultTransform(file_get_contents('lib/md/' . $page . '.md'));
+    if (file_exists('lib/md/' . $page . '.md')) {
+        $html = Markdown::defaultTransform(file_get_contents('lib/md/' . $page . '.md'));
+    } else {
+        header('HTTP/1.0 404 Not Found');
+        $html = '<h1 class="text-center">404 Page Not Found</h1>';
+    }
 } else {
     $html = include 'lib/php/navigation.php';
 }
@@ -33,13 +40,12 @@ $html .= "\n";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>alsa.opensrc.org</title>
+    <title><?= TITLE ?></title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://gist.github.com/andyferra/2554919/raw/2e66cabdafe1c9a7f354aa2ebf5bc38265e638e5/github.css" rel="stylesheet">
     <style>
 body { padding-top: 60px; overflow-y: scroll; }
 .jumbotron { margin-top: 20px; }
-h2 { border-bottom: 1px solid #EFEFEF; }
+h2 { border-bottom: 1px solid #DFDFDF; }
     </style>
   </head>
   <body>
@@ -50,7 +56,7 @@ h2 { border-bottom: 1px solid #EFEFEF; }
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">alsa.opensrc.org</a>
+        <a class="navbar-brand" href="/"><?= TITLE ?></a>
         <div class="nav-collapse collapse">
           <ul class="nav navbar-nav"><?= $menu ?>
           </ul>
