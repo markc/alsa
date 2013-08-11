@@ -302,57 +302,62 @@ For a better understanding, try the same command in verbose mode:
 
     $ arecord -v -r 96000 -f cd -t wav -D plughw:UA25EX foobar.wav
 
-The resulting message: `Recording WAVE 'foobar.wav' : Signed 16 bit Little
-Endian, Rate 44100 Hz, Stereo Plug PCM: Rate conversion PCM (96000,
-sformat=S24_3LE)` Its setup is:
+The resulting message:
 
-     stream       : CAPTURE
-     access       : RW_INTERLEAVED
-     format       : S16_LE
-     subformat    : STD
-     channels     : 2
-     rate         : 44100
-     exact rate   : 44100 (44100/1)
-     msbits       : 16
-     buffer_size  : 22050
-     period_size  : 5512
-     period_time  : 125000
-     tick_time    : 0
-     tstamp_mode  : NONE
-     period_step  : 1
-     sleep_min    : 0
-     avail_min    : 5512
-     xfer_align   : 5512
-     start_threshold  : 1
-     stop_threshold   : 22050
-     silence_threshold: 0
-     silence_size : 0
-     boundary     : 722534400
+    Recording WAVE 'foobar.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, \
+    Stereo Plug PCM: Rate conversion PCM (96000, sformat=S24_3LE)
 
-Slave: Hardware PCM card 1 'UA-25EX' device 0 subdevice 0 Its setup is:
+Its setup is:
 
-     stream       : CAPTURE
-     access       : MMAP_INTERLEAVED
-     format       : S24_3LE
-     subformat    : STD
-     channels     : 2
-     rate         : 96000
-     exact rate   : 96000 (96000/1)
-     msbits       : 24
-     buffer_size  : 48002
-     period_size  : 12000
-     period_time  : 125000
-     tick_time    : 0
-     tstamp_mode  : NONE
-     period_step  : 1
-     sleep_min    : 0
-     avail_min    : 12000
-     xfer_align   : 12000
-     start_threshold  : 2
-     stop_threshold   : 48002
-     silence_threshold: 0
-     silence_size : 0
-     boundary     : 1572929536
+    stream            : CAPTURE
+    access            : RW_INTERLEAVED
+    format            : S16_LE
+    subformat         : STD
+    channels          : 2
+    rate              : 44100
+    exact rate        : 44100 (44100/1)
+    msbits            : 16
+    buffer_size       : 22050
+    period_size       : 5512
+    period_time       : 125000
+    tick_time         : 0
+    tstamp_mode       : NONE
+    period_step       : 1
+    sleep_min         : 0
+    avail_min         : 5512
+    xfer_align        : 5512
+    start_threshold   : 1
+    stop_threshold    : 22050
+    silence_threshold : 0
+    silence_size      : 0
+    boundary          : 722534400
+
+    Slave: Hardware PCM card 1 'UA-25EX' device 0 subdevice 0
+
+Its setup is:
+
+    stream            : CAPTURE
+    access            : MMAP_INTERLEAVED
+    format            : S24_3LE
+    subformat         : STD
+    channels          : 2
+    rate              : 96000
+    exact rate        : 96000 (96000/1)
+    msbits            : 24
+    buffer_size       : 48002
+    period_size       : 12000
+    period_time       : 125000
+    tick_time         : 0
+    tstamp_mode       : NONE
+    period_step       : 1
+    sleep_min         : 0
+    avail_min         : 12000
+    xfer_align        : 12000
+    start_threshold   : 2
+    stop_threshold    : 48002
+    silence_threshold : 0
+    silence_size      : 0
+    boundary          : 1572929536
 
 The Edirol UA-25EX is able to record in 24 bits, at the sample rate of 96 Khz.
 Now, try to play the recorded sound at 96 Khz:
@@ -369,56 +374,61 @@ Alsa if you are using Udev and hotplug. Re-try to play the sound:
 This results in:
 
     Playing WAVE 'foobar.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
+    Plug PCM: Rate conversion PCM (96000, sformat=S24\_3LE)
 
-Plug PCM: Rate conversion PCM (96000, sformat=S24\_3LE) Its setup is:
+Its setup is:
 
-     stream       : PLAYBACK
-     access       : RW_INTERLEAVED
-     format       : S16_LE
-     subformat    : STD
-     channels     : 2
-     rate         : 44100
-     exact rate   : 44100 (44100/1)
-     msbits       : 16
-     buffer_size  : 22050
-     period_size  : 5512
-     period_time  : 125000
-     tick_time    : 0
-     tstamp_mode  : NONE
-     period_step  : 1
-     sleep_min    : 0
-     avail_min    : 5512
-     xfer_align   : 5512
-     start_threshold  : 22048
-     stop_threshold   : 22050
-     silence_threshold: 0
-     silence_size : 0
-     boundary     : 722534400
+    stream            : PLAYBACK
+    access            : RW_INTERLEAVED
+    format            : S16_LE
+    subformat         : STD
+    channels          : 2
+    rate              : 44100
+    exact rate        : 44100 (44100/1)
+    msbits            : 16
+    buffer_size       : 22050
+    period_size       : 5512
+    period_time       : 125000
+    tick_time         : 0
+    tstamp_mode       : NONE
+    period_step       : 1
+    sleep_min         : 0
+    avail_min         : 5512
+    xfer_align        : 5512
+    start_threshold   : 22048
+    stop_threshold    : 22050
+    silence_threshold : 0
+    silence_size      : 0
+    boundary          : 722534400
 
-Slave: Hardware PCM card 1 'UA-25EX' device 0 subdevice 0 Its setup is:
+And:
 
-     stream       : PLAYBACK
-     access       : MMAP_INTERLEAVED
-     format       : S24_3LE
-     subformat    : STD
-     channels     : 2
-     rate         : 96000
-     exact rate   : 96000 (96000/1)
-     msbits       : 24
-     buffer_size  : 48002
-     period_size  : 12000
-     period_time  : 125000
-     tick_time    : 0
-     tstamp_mode  : NONE
-     period_step  : 1
-     sleep_min    : 0
-     avail_min    : 12000
-     xfer_align   : 12000
-     start_threshold  : 48000
-     stop_threshold   : 48002
-     silence_threshold: 0
-     silence_size : 0
-     boundary     : 1572929536
+    Slave: Hardware PCM card 1 'UA-25EX' device 0 subdevice 0
+
+Where its setup is:
+
+    stream            : PLAYBACK
+    access            : MMAP_INTERLEAVED
+    format            : S24_3LE
+    subformat         : STD
+    channels          : 2
+    rate              : 96000
+    exact rate        : 96000 (96000/1)
+    msbits            : 24
+    buffer_size       : 48002
+    period_size       : 12000
+    period_time       : 125000
+    tick_time         : 0
+    tstamp_mode       : NONE
+    period_step       : 1
+    sleep_min         : 0
+    avail_min         : 12000
+    xfer_align        : 12000
+    start_threshold   : 48000
+    stop_threshold    : 48002
+    silence_threshold : 0
+    silence_size      : 0
+    boundary          : 1572929536
 
 It works! Remember, at 96.000 Khz, you can either play OR record, but
 not both.
