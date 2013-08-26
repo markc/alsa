@@ -53,13 +53,15 @@ footer { text-align: center; color: #7F7F7F; font-style: italic; }
   <body>
     <div class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><?= TITLE ?></a>
-        <div class="nav-collapse collapse">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><?= TITLE ?></a>
+        </div>
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav"><?= $menu ?>
           </ul>
         </div>
