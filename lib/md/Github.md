@@ -36,5 +36,5 @@ directly at [markc@renta.net].
 [https://github.com/opensrc/alsa]: https://github.com/opensrc/alsa
 [markc@renta.net]: mailto:markc@renta.net
 [Edirol_UA-25EX]: http://alsa.opensrc.org/Edirol_UA-25EX
-[Github.md]: https://github.com/opensrc/alsa/master/lib/md/Github.md
+[Github.md]: https://github.com/opensrc/alsa/blob/master/lib/md/Github.md
 [Edit this page]: https://github.com/opensrc/alsa/edit/master/lib/md/Github.md
