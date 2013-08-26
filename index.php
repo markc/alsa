@@ -3,6 +3,7 @@
 // A simple script to render Markdown files within a Bootstrap3 contianer.
 
 define('TITLE', 'alsa.opensrc.org');
+define('FOOTER', '&copy; 2013 OpenSrc Team (AGPL-3.0)');
 
 require 'lib/php/Markdown.php';
 use \Michelf\Markdown;
@@ -41,11 +42,12 @@ $html .= "\n";
     <meta name="description" content="">
     <meta name="author" content="">
     <title><?= TITLE ?></title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
 body { padding-top: 60px; overflow-y: scroll; }
 .jumbotron { margin-top: 20px; }
 h2 { border-bottom: 1px solid #eee; }
+footer { text-align: center; color: #7F7F7F; font-style: italic; }
     </style>
   </head>
   <body>
@@ -65,7 +67,8 @@ h2 { border-bottom: 1px solid #eee; }
     </div>
     <div class="container"><?= $html ?>
     </div>
+    <footer><?= FOOTER ?></footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   </body>
 </html>
