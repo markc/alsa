@@ -32,7 +32,7 @@ return '
       <div class="row">
         <div class="col-lg-4">$links
         </div>
-      </div>
+      </div>';
 EOM;
 
 file_put_contents('navigation.php', $output);
