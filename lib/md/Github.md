@@ -1,4 +1,4 @@
-# [https://github.com/opensrc/alsa]
+# Source @ https://github.com/opensrc/alsa
 
 ### [Edit this page]
 
@@ -7,12 +7,10 @@
 _[Mark Constable]:_ Some minor updates to the index.php script and it's
 Bootstrap 3 (final) template. Just a reminder that if anyone can help out with
 managing these pages via Github then I'd really appreciate it as there is plenty
-of "low hanging fruit" to pick from. Just pick any Markdown file in lib/md and
-clean it up a little, or a lot :-)
-
-View the source of [Edirol_UA-25EX] to get an idea how the layout should look
-as its had the most amount of work on it to date. Create your own User:you
-page and leave a note here for posterity if you care to.
+of "low hanging fruit" to pick from. Chose any Markdown file in lib/md and
+clean it up a little. View the source of [Edirol_UA-25EX] to get an idea how
+the layout should look as its had the most amount of work on it to date. Create
+your own User:you page and leave a note here for posterity if you care to.
 
 I just discovered that if full canonical links are used then the Markdown
 rendered pages at Github will obviously still point back to this site! So this
@@ -33,7 +31,6 @@ directly at [markc@renta.net].
 [fork the project]: https://help.github.com/articles/fork-a-repo
 [send a pull request]: https://help.github.com/articles/using-pull-requests
 [Github issue tracker]: https://github.com/opensrc/alsa/issues
-[https://github.com/opensrc/alsa]: https://github.com/opensrc/alsa
 [markc@renta.net]: mailto:markc@renta.net
 [Edirol_UA-25EX]: http://alsa.opensrc.org/Edirol_UA-25EX
 [Github.md]: https://github.com/opensrc/alsa/blob/master/lib/md/Github.md
