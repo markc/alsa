@@ -1,4 +1,4 @@
-# Github Source @ [https://github.com/opensrc/alsa]
+# [https://github.com/opensrc/alsa]
 
 ### [Edit this page]
 
