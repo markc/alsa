@@ -1,4 +1,4 @@
-# Source @ https://github.com/opensrc/alsa
+# [https://github.com/opensrc/alsa]
 
 ### [Edit this page]
 
@@ -35,3 +35,4 @@ directly at [markc@renta.net].
 [Edirol_UA-25EX]: http://alsa.opensrc.org/Edirol_UA-25EX
 [Github.md]: https://github.com/opensrc/alsa/blob/master/lib/md/Github.md
 [Edit this page]: https://github.com/opensrc/alsa/edit/master/lib/md/Github.md
+[https://github.com/opensrc/alsa]: https://github.com/opensrc/alsa
