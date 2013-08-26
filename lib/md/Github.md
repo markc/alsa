@@ -1,6 +1,6 @@
-# Github
+# Github Source @ [https://github.com/opensrc/alsa]
 
-### [https://github.com/opensrc/alsa]
+### [Edit this page]
 
 ### 2013-08-27 - Minor Updates To BS3 Template
 
@@ -14,6 +14,12 @@ View the source of [Edirol_UA-25EX] to get an idea how the layout should look
 as its had the most amount of work on it to date. Create your own User:you
 page and leave a note here for posterity if you care to.
 
+I just discovered that if full canonical links are used then the Markdown
+rendered pages at Github will obviously still point back to this site! So this
+link, [Github.md], should point to this file at Github no matter which site the
+link is actually clicked on. And let's try a direct edit page link at Github
+for anyone who happens to have write perms.
+
 ### 2013-08-11 - Content Source
 
 _[Mark Constable]:_ The contents of this "wiki" is now at Github and has been
@@ -23,10 +29,12 @@ pages. The main repo is at [https://github.com/opensrc/alsa] so any issues or
 ideas can be added to the [Github issue tracker] or email the site admin
 directly at [markc@renta.net].
 
-[Mark Constable]: /User:Markc
+[Mark Constable]: http://alsa.opensrc.org/User:Markc
 [fork the project]: https://help.github.com/articles/fork-a-repo
 [send a pull request]: https://help.github.com/articles/using-pull-requests
 [Github issue tracker]: https://github.com/opensrc/alsa/issues
 [https://github.com/opensrc/alsa]: https://github.com/opensrc/alsa
 [markc@renta.net]: mailto:markc@renta.net
-[Edirol_UA-25EX]: /Edirol_UA-25EX
+[Edirol_UA-25EX]: http://alsa.opensrc.org/Edirol_UA-25EX
+[Github.md]: https://github.com/opensrc/alsa/master/lib/md/Github.md
+[Edit this page]: https://github.com/opensrc/alsa/edit/master/lib/md/Github.md
