@@ -43,7 +43,7 @@ $html .= "\n";
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
 body { padding-top: 50px; overflow-y: scroll; }
-h1 { border-bottom: 1px solid #eee; }
+h1, h2 { border-bottom: 1px solid #eee; margin-bottom: 12px; }
 footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: serif; }
 @media (min-width: 768px) {
   .container {
