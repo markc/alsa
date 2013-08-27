@@ -9,13 +9,16 @@ if (PHP_SAPI !== 'cli') return;
 $files = glob('../md/*.md');
 
 $num_files = count($files);
-$div_one = ceil($num_files / 3);
-$div_two = ceil($div_one * 2);
+$div_one = ceil($num_files / 2);
+
+//$div_one = ceil($num_files / 3);
+//$div_two = ceil($div_one * 2);
 
 $links = '';
 
 for($i = 0; $i < $num_files; $i++) {
-    if ($i == $div_one or $i == $div_two) {
+//    if ($i == $div_one or $i == $div_two) {
+    if ($i == $div_one) {
         $links .= '
         </div>
         <div class="col-lg-4">';
