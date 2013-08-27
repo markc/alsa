@@ -13,11 +13,11 @@ $page = isset($_GET['q']) ? htmlspecialchars(trim($_GET['q'], '/')) : '';
 if ($page) {
     if (file_exists('lib/md/' . $page . '.md')) {
         $html = Markdown::defaultTransform(file_get_contents('lib/md/' . $page . '.md')).'
-        <br><br>
-        <small>
+        <div class="edit">
+        <a href="https://github.com/opensrc/alsa/blob/master/lib/md/'.$page.'.md">GITHUB</a> |
         <a href="https://github.com/opensrc/alsa/edit/master/lib/md/'.$page.'.md">EDIT</a> |
         <a href="http://alsa.opensrc.org/'.$page.'">LIVE</a>
-        </small>';
+        </div>';
     } else {
         header('HTTP/1.0 404 Not Found');
         $html = '<h1 class="text-center">404 Page Not Found</h1>';
@@ -50,6 +50,7 @@ $html .= "\n";
 body { padding-top: 50px; overflow-y: scroll; }
 h1, h2, h3, h4 { border-bottom: 1px solid #eee; padding-bottom: 2px; margin-top: 20px; }
 footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: serif; }
+.edit { font-size: 50%; float: right; }
 @media (min-width: 768px) {
   .container {
     max-width: 760px;
