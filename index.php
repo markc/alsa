@@ -22,7 +22,7 @@ if ($page) {
 }
 
 $menu = '';
-$menu_ary = array('Readme', 'Github');
+$menu_ary = array('README', 'Github', 'User:Markc');
 
 foreach($menu_ary as $m) {
     $c = $m == $page ? ' class="active"' : '';
