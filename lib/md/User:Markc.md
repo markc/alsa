@@ -5,21 +5,20 @@
 
 #### 2009-04-24 - Two alsa wikis?
 
-_[Qubodup]:_ Hi, Is somewhere explained why this
-and the 'official' wiki co-exist? Wouldn't it be better (simpler) to have
-just one? For easier differnetiation between the two, I recommend you use
-this [favicon] and [alsalogo] to make the difference clearer.
+_[Qubodup]:_ Hi, Is somewhere explained why this and the 'official' wiki co-exist?
+Wouldn't it be better (simpler) to have just one? For easier differnetiation
+between the two, I recommend you use this [favicon] and [alsalogo] to make the
+difference clearer.
 
-_[Mark Constable]:_ 04:41, 25 April 2009 (EST): thanks for the logos, great
-dea and very much appreciated. Some of the reasons this site remains in
-existence are, no one from the official ALSA site has ever contributed
-nything to this site (before the official one existed, this one predates
-the official wiki by quite a few years), no one has officially or formally
-suggested a merge, no one else has shown any serious interest in helping to
-merge them, and most importantly there are a significant number of offsite
-referers and Google hits that come directly to this site because it's been
-here for so long. All points could be worked through with a significant
-amount of effort from what would have to be a focussed **team effort**,
+_[Mark Constable]:_ Thanks for the logos, great idea and very much appreciated.
+Some of the reasons this site remains in existence are, no one from the official
+ALSA site has ever contributed anything to this site (before the official one
+existed, this one predates the official wiki by quite a few years), no one has
+officially or formally suggested a merge, no one else has shown any serious
+interest in helping to merge them, and most importantly there are a significant
+number of offsite referers and Google hits that come directly to this site
+because it's been here for so long. All points could be worked through with a
+significant amount of effort from what would have to be a focussed **team effort**,
 which I see no sign of happening, and at the end of the day is it all that
 bad that this site also exists?
 
@@ -32,8 +31,8 @@ in the butt.
 #### 2007-02-23 - Licence
 
 _[Ingomueller.net]:_ Hi Mark! [Andron] asked my on my talk page about the
-licence of this wiki. As I wrote in my diary and on the [ALSA], I don't exactly
-know what to do there. The thing is that [Copyright] says the content of the
+licence of this wiki. As I wrote in my diary and on the `ALSA`, I don't exactly
+know what to do there. The thing is that `Copyright` says the content of the
 wiki are licenced under the cs-by licence, but this page is not linked to by
 any article! On the other side, there was a link to the cs-by-nc-ca licence
 on every page of the old wiki. The way I see it, the link to cs-by-nc-ca is
@@ -48,20 +47,20 @@ What practical advantage do they offer over a single "flat" namespace?
 
 _[Ingomueller.net]:_ Hi! The main advantage of categories is that they are
 meant to be used for grouping articles in categories ;-) Therefore, a lot of
-special functions are realised with them. For example, a simple `[[Category:Sound cards]]`
+special functions are realised with them. For example, a simple `Category:Sound cards`
 on the bottom of a page is enough to (1) create a link to that page on the
 index page of the category to that page, (2) create a link to the index
-page on the bottom of the page, (3) remove it from [Special:Uncategorizedpages].
+page on the bottom of the page, (3) remove it from `Special:Uncategorizedpages`.
 Point (1) also means, that the index page is automatically up-to-date. The
 downside of these index pages is that they are not as flexible as regular
-pages. That's why I created [Sound cards] as second index for the. Obviously,
+pages. That's why I created `Sound cards` as second index for the. Obviously,
 this means kind of a loss of point (2).
 
 To be honest, I don't know whether this is *THE* solution. I don't know
 whether it is good to uses namespaces either. I just didn't see them being
 used yet and I don't think that they are meant to replace categories. For
 example if namespaces would be used, not *all* articles would appear in
-[Special:Allpages].
+`Special:Allpages`.
 
 To resume: I agree with the very most comments you made today! The only thing
 I have doubts about are the namespaces. If you wouldn't have made another
@@ -88,14 +87,14 @@ totally absurd, so merging the two sources wiki and official site will be
 discussed, too. I'd like you to join the disussion as administrator of this
 wiki. I really hope that this discussion is finally moving things forward.
 
-_[Mark Constable]:_ 15:34, 20 February 2007 (EST): Feel free to do as you
-feel best suits the needs of all involved.
+_[Mark Constable]:_ Feel free to do as you feel best suits the needs of all
+involved.
 
 #### 2007-02-12 - Your user page
 
 _[Ingomueller.net]:_ I saw that you copied your old user profile, so I created 
-edirects from [User:MarkConstable] and [MarkConstable], your old user pages.
-When I set them up initially, I didn't know that your user name was now *markc*.
+redirects from `User:MarkConstable` and `MarkConstable`, your old user pages.
+When I set them up initially, I didn't know that your user name was now `markc`.
 
 _[Mark Constable]:_ Thank you. I'm still getting used to how MediaWiki works
 and did not realize, at the time, that my original MW markc account would also
@@ -112,7 +111,7 @@ usefull, because one of our initial aims was to keep external links working.
 _[Mark Constable]:_ Good catch. I've tried some rewrite rules but I can't
 quite get the right combination to work. I've posted a forum message for help.
 BTW, I saw the Johnless edits, do you think a PHP forum would be useful...
-like say punBB ? There used to be an alsa@opensrc.org mailing-list but no
+like say punBB? There used to be an alsa@opensrc.org mailing-list but no
 one used it so I dismantled it some time ago (it was just catching spam).
 
 _[Ingomueller.net]:_ YES! I think a forum would be a VERY good idea! I already
@@ -150,7 +149,7 @@ minutes and found only request of MediaWiki integrations, no module or similar.
 One more thing about the initial topic: Is it possible (and desirable) to
 write protect the old wiki and include a note on every page like "The ALSA
 wiki has moved to a new software. This version is only kept to preserve old
-versions. Please go to http://alsa.opensrc.org/\<pagename\> to see this page
+versions. Please go to `http://alsa.opensrc.org/<pagename>` to see this page
 in the new wiki." Someone made changes in the old wiki recently. With the
 write protection, we wouldn't have to care about such changes.
 
@@ -170,11 +169,13 @@ _[Ingomueller.net]:_ I keep getting this error when submitting changes from a pa
 
     Database error
     From the ALSA wiki
-    A database query syntax error has occurred. This may indicate a bug in the software. The last attempted database query was:
+    A database query syntax error has occurred. This may indicate a bug\
+    in the software. The last attempted database query was:
 
         (SQL query hidden)
 
-    from within function "SearchMySQL4::update". MySQL returned error "1062: Duplicate entry '2' for key 3 (localhost)".
+    from within function "SearchMySQL4::update". MySQL returned error\
+    "1062: Duplicate entry '2' for key 3 (localhost)".
 
 Do you knwo what it is about? The strange thing is, that the changes are
 mostly made, i.e. the changes from the page itself are applied, but for
@@ -210,8 +211,9 @@ _[Mark Constable]:_ I'm using the RSS feed via aKregator for KDE and it works.
 I'll check it with FF and TB and see if I can pick up the exact error.
 
 [https://github.com/opensrc/alsa]: https://github.com/opensrc/alsa
-[Mark Constable]: /alsa/User:Markc
-[ingomueller.net]: /alsa/User:Ingomueller.net
+[Mark Constable]: http://alsa.opensrc.org/User:Markc
+[Ingomueller.net]: http://alsa.opensrc.org/User:Ingomueller.net
+[Qubodup]: http://alsa.opensrc.org/User:Qubodup
 [alsalogo]: https://sites.google.com/site/qubodup/alsalogo.gif
 [alsalogo]: http://qubodup.googlepages.com/favicon.ico
 [favicon]: http://qubodup.googlepages.com/faviconWTFGOOGLE.ico
