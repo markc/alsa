@@ -1,8 +1,9 @@
-# [https://github.com/opensrc/alsa]
+## [https://github.com/opensrc/alsa]
 
-### [Edit this page] | [Live Page]
+- [Edit this page at Github]
+- [Live Page at alsa.opensrc.org]
 
-### 2013-08-27 - Minor Updates To BS3 Template
+#### 2013-08-27 - Minor Updates To BS3 Template
 
 _[Mark Constable]:_ Some minor updates to the index.php script and it's
 Bootstrap 3 (final) template. Just a reminder that if anyone can help out with
@@ -18,7 +19,7 @@ link, [Github.md], should point to this file at Github no matter which site the
 link is actually clicked on. And let's try a direct edit page link at Github
 for anyone who happens to have write perms.
 
-### 2013-08-11 - Content Source
+#### 2013-08-11 - Content Source
 
 _[Mark Constable]:_ The contents of this "wiki" is now at Github and has been
 crudely converted to Markdown format. If you have a Github account then feel
@@ -34,6 +35,6 @@ directly at [markc@renta.net].
 [markc@renta.net]: mailto:markc@renta.net
 [Edirol_UA-25EX]: http://alsa.opensrc.org/Edirol_UA-25EX
 [Github.md]: https://github.com/opensrc/alsa/blob/master/lib/md/Github.md
-[Edit this page]: https://github.com/opensrc/alsa/edit/master/lib/md/Github.md
+[Edit this page at Github]: https://github.com/opensrc/alsa/edit/master/lib/md/Github.md
 [https://github.com/opensrc/alsa]: https://github.com/opensrc/alsa
-[Live Page]: http://alsa.opensrc.org/Github
+[Live Page at alsa.opensrc.org]: http://alsa.opensrc.org/Github
