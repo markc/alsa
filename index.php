@@ -72,9 +72,7 @@ footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: se
     <div class="container"><?= $html ?>
     </div>
     <footer><?= FOOTER ?></footer>
-<!-- let's comment these out until actually needed
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
--->
   </body>
 </html>
