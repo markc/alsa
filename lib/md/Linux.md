@@ -13,10 +13,10 @@ support for multimedia applications.
 
 ### See also
 
-- [http://www.linux.org].
+- [http://www.linux.org]
 
-- Linux is a registered trademark of Linus Torvalds
-- Microsoft Windows are registered trademarks of Microsoft Corporation
+> Linux is a registered trademark of Linus Torvalds
+> Microsoft Windows are registered trademarks of Microsoft Corporation
 
 [ALSA]: http://alsa-project.org
 [http://www.linux.org]: http://www.linux.org
