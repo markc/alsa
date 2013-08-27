@@ -1,5 +1,8 @@
 # README
 
+- [Edit this page at Github]
+- [Live Page at alsa.opensrc.org]
+
 #### 2013-08-27 - Mobile Friendly Bootstrap
 
 _[Mark Constable]:_ I am so impressed with the latest Bootstrap 3 template
@@ -27,3 +30,5 @@ to work but now needs a lot of manual TLC on each page to get them into
 reasonable shape.
 
 [Mark Constable]: http://alsa.opensrc.org/User:Markc
+[Edit this page at Github]: https://github.com/opensrc/alsa/edit/master/lib/md/README.md
+[Live Page at alsa.opensrc.org]: http://alsa.opensrc.org/README
