@@ -12,7 +12,12 @@ $page = isset($_GET['q']) ? htmlspecialchars(trim($_GET['q'], '/')) : '';
 
 if ($page) {
     if (file_exists('lib/md/' . $page . '.md')) {
-        $html = Markdown::defaultTransform(file_get_contents('lib/md/' . $page . '.md'));
+        $html = Markdown::defaultTransform(file_get_contents('lib/md/' . $page . '.md')).'
+        <br><br>
+        <small>
+        <a href="https://github.com/opensrc/alsa/edit/master/lib/md/'.$page.'.md">EDIT</a> |
+        <a href="http://alsa.opensrc.org/'.$page.'">LIVE</a>
+        </small>';
     } else {
         header('HTTP/1.0 404 Not Found');
         $html = '<h1 class="text-center">404 Page Not Found</h1>';
