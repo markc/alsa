@@ -1,9 +1,9 @@
 # JAMin
 
 JAMin is an open source application designed to perform professional audio
-mastering of stereo input streams and uses the JACK Audio Connection Kit
-[JACK] Audio Mastering interface. It uses [LADSPA] for digital signal
-processing, [DSP] and is licensed under the GPL.
+mastering of stereo input streams and uses the [JACK] (JACK Audio Connection
+Kit) Audio Mastering interface and [LADSPA] for digital signal processing. It
+is licensed under the GPL.
 
 ## JAMin features
 
@@ -24,5 +24,4 @@ processing, [DSP] and is licensed under the GPL.
 
 [JACK]: http://alsa.opensrc.org/JACK
 [LADSPA]: http://alsa.opensrc.org/LADSPA
-[DSP]: http://alsa.opensrc.org/DSP
 [http://jamin.sourceforge.net]: http://jamin.sourceforge.net
