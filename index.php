@@ -39,15 +39,17 @@ $html .= "\n";
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <title><?= TITLE ?></title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-body { padding-top: 60px; overflow-y: scroll; }
-.jumbotron { margin-top: 20px; }
-h2 { border-bottom: 1px solid #eee; }
-footer { text-align: center; color: #7F7F7F; font-style: italic; }
+body { padding-top: 70px; overflow-y: scroll; }
+h1 { border-bottom: 1px solid #eee; }
+footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: serif; }
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
     </style>
   </head>
   <body>
@@ -70,7 +72,9 @@ footer { text-align: center; color: #7F7F7F; font-style: italic; }
     <div class="container"><?= $html ?>
     </div>
     <footer><?= FOOTER ?></footer>
+<!-- let's comment these out until actually needed
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+-->
   </body>
 </html>
