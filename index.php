@@ -47,7 +47,7 @@ h1, h2 { border-bottom: 1px solid #eee; padding-bottom: 2px; }
 footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: serif; }
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 760px;
   }
 }
     </style>
