@@ -1,9 +1,4 @@
-Latency
-=======
-
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
+# Latency
 
 **Latency** refers to the delay between input and output of data.
 
@@ -13,9 +8,8 @@ from the outside world, and it being available to the computer.
 Output latency the delay between data being delivered by the computer,
 and it being delivered to the outside world.
 
-Retrieved from
-"[http://alsa.opensrc.org/Latency](http://alsa.opensrc.org/Latency)"
+## Seel also
 
-[Category](/Special:Categories "Special:Categories"):
-[Glossary](/Category:Glossary "Category:Glossary")
-
+- [http://www.alsa-project.org/main/index.php/Low_latency_howto]
+- [https://wiki.archlinux.org/index.php/Pro_Audio]
+- [http://apps.linuxaudio.org/wiki/jack_latency_tests]
