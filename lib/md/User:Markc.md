@@ -1,8 +1,5 @@
 # User:Markc
 
-- [Edit this page at Github]
-- [Live Page at alsa.opensrc.org]
-
 #### 2009-04-24 - Two alsa wikis?
 
 _[Qubodup]:_ Hi, Is somewhere explained why this and the 'official' wiki co-exist?
