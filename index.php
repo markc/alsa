@@ -4,6 +4,8 @@
 
 define('TITLE', 'alsa.opensrc.org');
 define('FOOTER', '&copy; 2013 OpenSrc Team (AGPL-3.0)');
+define('BLOB', 'https://github.com/opensrc/alsa/blob/master/lib/md/');
+define('EDIT', 'https://github.com/opensrc/alsa/edit/master/lib/md/');
 
 require 'lib/php/Markdown.php';
 use \Michelf\Markdown;
@@ -14,9 +16,8 @@ if ($page) {
     if (file_exists('lib/md/' . $page . '.md')) {
         $html = Markdown::defaultTransform(file_get_contents('lib/md/' . $page . '.md')).'
         <div class="edit">
-        <a href="https://github.com/opensrc/alsa/blob/master/lib/md/'.$page.'.md">GITHUB</a> |
-        <a href="https://github.com/opensrc/alsa/edit/master/lib/md/'.$page.'.md">EDIT</a> |
-        <a href="http://alsa.opensrc.org/'.$page.'">LIVE</a>
+          <a href="'.BLOB.$page.'.md">GITHUB</a> |
+          <a href="'.EDIT.$page.'.md">EDIT</a>
         </div>';
     } else {
         header('HTTP/1.0 404 Not Found');
@@ -51,11 +52,7 @@ body { padding-top: 50px; overflow-y: scroll; }
 h1, h2, h3, h4 { border-bottom: 1px solid #eee; padding-bottom: 2px; margin-top: 20px; }
 footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: serif; }
 .edit { font-size: 50%; float: right; }
-@media (min-width: 768px) {
-  .container {
-    max-width: 760px;
-  }
-}
+@media (min-width: 768px) { .container { max-width: 760px; } }
     </style>
   </head>
   <body>
@@ -77,7 +74,8 @@ footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: se
     </div>
     <div class="container"><?= $html ?>
     </div>
-    <footer><?= FOOTER ?></footer>
+    <footer><?= FOOTER ?>
+    </footer>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   </body>
