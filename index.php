@@ -29,7 +29,7 @@ if ($page) {
 
 $menu = '';
 $menu_ary = [
-    ['README', '<i class="icon-fixed-width icon-file-text-alt"></i>'],
+    ['README', '<i class="icon-fixed-width icon-file-text"></i>'],
     ['Github', '<i class="icon-fixed-width icon-github-alt"></i>'],
     ['User:Markc', '<i class="icon-fixed-width icon-user"></i>'],
 ];
