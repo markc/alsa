@@ -1,8 +1,6 @@
 # Github
 
-- [https://github.com/opensrc/alsa]
-- [Edit this page at Github]
-- [Live Page at alsa.opensrc.org]
+##### [https://github.com/opensrc/alsa]
 
 #### 2013-08-27 - Minor Updates To BS3 Template
 
@@ -36,6 +34,4 @@ directly at [markc@renta.net].
 [markc@renta.net]: mailto:markc@renta.net
 [Edirol_UA-25EX]: http://alsa.opensrc.org/Edirol_UA-25EX
 [Github.md]: https://github.com/opensrc/alsa/blob/master/lib/md/Github.md
-[Edit this page at Github]: https://github.com/opensrc/alsa/edit/master/lib/md/Github.md
 [https://github.com/opensrc/alsa]: https://github.com/opensrc/alsa
-[Live Page at alsa.opensrc.org]: http://alsa.opensrc.org/Github
