@@ -4,8 +4,8 @@
 
 define('TITLE', 'alsa.opensrc.org');
 define('FOOTER', '&copy; 2013 OpenSrc Team (AGPL-3.0)');
-define('BLOB', 'https://github.com/opensrc/alsa/blob/master/lib/md/');
-define('EDIT', 'https://github.com/opensrc/alsa/edit/master/lib/md/');
+define('BLOB', 'https://github.com/opensrc/alsa/blob/master/');
+define('EDIT', 'https://github.com/opensrc/alsa/edit/master/');
 
 require 'lib/php/Markdown.php';
 use \Michelf\Markdown;
@@ -16,8 +16,8 @@ if ($page) {
     if (file_exists('lib/md/' . $page . '.md')) {
         $html = Markdown::defaultTransform(file_get_contents('lib/md/' . $page . '.md')).'
         <div class="edit">
-          <a href="'.BLOB.$page.'.md">GITHUB</a> |
-          <a href="'.EDIT.$page.'.md">EDIT</a>
+          <a href="'.BLOB.'lib/md/'.$page.'.md">GITHUB</a> |
+          <a href="'.EDIT.'lib/md/'.$page.'.md">EDIT</a>
         </div>';
     } else {
         header('HTTP/1.0 404 Not Found');
