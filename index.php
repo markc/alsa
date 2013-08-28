@@ -28,16 +28,17 @@ if ($page) {
 }
 
 $menu = '';
-$menu_ary = array('README', 'Github', 'User:Markc');
+$menu_ary = [
+    ['README', '<i class="icon-fixed-width icon-file-text-alt"></i>'],
+    ['Github', '<i class="icon-fixed-width icon-github-alt"></i>'],
+    ['User:Markc', '<i class="icon-fixed-width icon-user"></i>'],
+];
 
 foreach($menu_ary as $m) {
-    $c = $m == $page ? ' class="active"' : '';
+    $c = $m[0] == $page ? ' class="active"' : '';
     $menu .= '
-            <li'.$c.'><a href="/'.$m.'">'.$m.'</a></li>';
+            <li'.$c.'><a href="/'.$m[0].'">'.$m[1].' '.$m[0].'</a></li>';
 }
-
-$menu .= "\n";
-$html .= "\n";
 
 ?>
 <!DOCTYPE html>
@@ -46,7 +47,8 @@ $html .= "\n";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= TITLE ?></title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <style>
 body { padding-top: 50px; overflow-y: scroll; }
 h1, h2, h3, h4 { border-bottom: 1px solid #eee; padding-bottom: 2px; margin-top: 20px; }
@@ -64,15 +66,18 @@ footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: se
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><?= TITLE ?></a>
+          <a class="navbar-brand" href="/"><i class="icon-fixed-width icon-home"></i> <?= TITLE ?></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav"><?= $menu ?>
+          
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
-    <div class="container"><?= $html ?>
+    <div class="container">
+      <?= $html ?>
+    
     </div>
     <footer><?= FOOTER ?>
     </footer>
