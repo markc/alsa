@@ -10,8 +10,8 @@ database at some point and see if I pull them out.
 
 Managing this site via Github is definitely "the way to go". The little EDIT link
 at the bottom goes straight to the online Github editer page so I don't even have
-to deal with the git program to deal with this site. Anyone with a Github account
-is also welcome to become a team member so those EDIT links can work for you too.
+to use git program to deal with this site. Anyone with a Github account is also
+welcome to become a team member so those EDIT links can work for you too.
 
 #### 2009-04-24 - Two alsa wikis?
 
