@@ -1,5 +1,18 @@
 # User:Markc
 
+#### 2013-08-29 - Finally almost back on track
+
+_[Mark Constable]:_ ... after 4 year of total neglect! Still a lot of work to go
+through all pages and make sure they render in Markdown correctly and also remove
+ancient text and some pages. Something I notice that is still missing are many
+dozens of good quality FAQ pages so I will make an effort to resurect the old MySQL
+database at some point and see if I pull them out.
+
+Managing this site via Github is definitely "the way to go". The little EDIT link
+at the bottom goes straight to the online Github editer page so I don't even have
+to deal with the git program to deal with this site. Anyone with a Github account
+is also welcome to become a team member so those EDIT links can work for you too.
+
 #### 2009-04-24 - Two alsa wikis?
 
 _[Qubodup]:_ Hi, Is somewhere explained why this and the 'official' wiki co-exist?
