@@ -73,12 +73,21 @@ Questions
 
 ### Device name
 
-It would be nice, to have [device
-name](?title=DeviceName&action=edit&redlink=1 "DeviceName (page does not exist)")
-explained (i.e. hw:0,0)
+It would be nice to have device
+name explained (i.e. hw:0,0)
 
 *It's ALSA-geek-speak for the initial hardware device that will convert
 digitzed sample to a smooth analog voltage or vice-versa. See below.*
+
+`aplay -D` will accept the output of `aplay -L` as device names. So, for example, my output has the lines
+
+    hdmi:CARD=HDMI,DEV=0
+        HDA ATI HDMI, HDMI 0
+        HDMI Audio Output
+
+The top line of that (`hdmi:CARD=HDMI,DEV=0`) will be directly accepted by `aplay -D` like so:
+
+    aplay -Dhdmi:CARD=HDMI,DEV=0
 
 It would be even nicer if the --help and man output of *aplay* would
 define what NAME of "--device=NAME" should be set to. Then people would
