@@ -56,14 +56,12 @@ unmute and set volume for master and pcm channels with ((amixer)) first.
 It might be a good idea to set a moderate volume level for not damaging
 your boxes. Then call
 
-` `
-
        aplay -Dhw:0,0 /boot/vmlinuz!
 
 If you hear a terrible noise, your hardware works. If you have pcm coded
-files such as .wav files at hands you might want to use these instead.
+files such as .wav files at hand you might want to use these instead.
 
-Note, that by using the -d switch you choose card number and pcm output
+Note that by using the -d switch you choose card number and pcm output
 of the card. If you already configured your
 [.asoundrc](/.asoundrc ".asoundrc") you may use name aliases defined
 there.
@@ -73,8 +71,8 @@ Questions
 
 ### Device name
 
-It would be nice to have device
-name explained (i.e. hw:0,0)
+It would be nice to have "device
+name" explained (i.e. hw:0,0)
 
 *It's ALSA-geek-speak for the initial hardware device that will convert
 digitzed sample to a smooth analog voltage or vice-versa. See below.*
