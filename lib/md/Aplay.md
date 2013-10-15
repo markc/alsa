@@ -56,14 +56,12 @@ unmute and set volume for master and pcm channels with ((amixer)) first.
 It might be a good idea to set a moderate volume level for not damaging
 your boxes. Then call
 
-` `
-
        aplay -Dhw:0,0 /boot/vmlinuz!
 
 If you hear a terrible noise, your hardware works. If you have pcm coded
-files such as .wav files at hands you might want to use these instead.
+files such as .wav files at hand you might want to use these instead.
 
-Note, that by using the -d switch you choose card number and pcm output
+Note that by using the -d switch you choose card number and pcm output
 of the card. If you already configured your
 [.asoundrc](/.asoundrc ".asoundrc") you may use name aliases defined
 there.
@@ -73,12 +71,21 @@ Questions
 
 ### Device name
 
-It would be nice, to have [device
-name](?title=DeviceName&action=edit&redlink=1 "DeviceName (page does not exist)")
-explained (i.e. hw:0,0)
+It would be nice to have "device
+name" explained (i.e. hw:0,0)
 
 *It's ALSA-geek-speak for the initial hardware device that will convert
 digitzed sample to a smooth analog voltage or vice-versa. See below.*
+
+`aplay -D` will accept the output of `aplay -L` as device names. So, for example, my output has the lines
+
+    hdmi:CARD=HDMI,DEV=0
+        HDA ATI HDMI, HDMI 0
+        HDMI Audio Output
+
+The top line of that (`hdmi:CARD=HDMI,DEV=0`) will be directly accepted by `aplay -D` like so:
+
+    aplay -Dhdmi:CARD=HDMI,DEV=0
 
 It would be even nicer if the --help and man output of *aplay* would
 define what NAME of "--device=NAME" should be set to. Then people would
