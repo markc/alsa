@@ -10,12 +10,8 @@ This happens if your sound card can't control the volume on the hardware
 side or the driver doesn't support this feature of your sound card.
 Maybe updating ALSA or using another module will fix the problem. If
 nothing works, you can define a new virtual pcm device in the
-[.asoundrc](/.asoundrc ".asoundrc") file, which controls the volume on
+[.asoundrc](/Asoundrc "Asoundrc") file, which controls the volume on
 the software side.
-
-Once you followed this howto, please leave a small feedback on the
-[discussion
-page](?title=Talk:How_to_use_softvol_to_control_the_master_volume&action=edit&redlink=1 "Talk:How to use softvol to control the master volume (page does not exist)").
 
 Contents
 --------
@@ -193,7 +189,7 @@ Common example with [dmix](/Dmix "Dmix")
 In the latest [ALSA](/ALSA "ALSA") versions (after 1.0.9)
 [dmix](/Dmix "Dmix") has been enabled by default for the boards that
 need it, so in order to benefit for both features (softvol+dmix) you
-must have in [\~/.asoundrc](/.asoundrc ".asoundrc") something like this:
+must have in [\~/.asoundrc](/Asoundrc "Asoundrc") something like this:
 
 ` `
 
