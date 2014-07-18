@@ -113,6 +113,11 @@ won't use it to control master volume, unless you can make them choose
 another control (like
 [GMix](?title=GMix&action=edit&redlink=1 "GMix (page does not exist)")).
 
+The name you give to your control matters a lot. Some suffixes have
+special meanings. For example, if you want your softvol to control the
+playback volume only, the control name must end with `Playback Volume`.
+Such a name prevents the mixer from showing it as a capture control.
+
 Now test your new device with:
 
 ` `
@@ -138,6 +143,27 @@ automatically). In that case, add this to your asoundrc file:
     pcm.!default {
         type             plug
         slave.pcm       "softvol"
+    }
+
+With this configuration, our `softvol` device controls both playback and
+capture. This may not work properly for some setups. If you prefer that
+`softvol` controls the playback only, you must define a new default device
+which is of type `asym`: you can then decide that the playback is controlled
+by the softvol, and let the capture unchanged. In that case, you should add
+this to your asoundrc file:
+
+` `
+
+    pcm.!default {
+        type            asym
+        playback.pcm {
+            type        plug
+            slave.pcm   "softvol"
+        }
+        capture.pcm {
+            type        plug
+            slave.pcm   "<device name>"
+        }
     }
 
 If you have a multi channel sound card, you may want to upmix these
