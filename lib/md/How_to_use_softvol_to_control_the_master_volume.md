@@ -10,12 +10,8 @@ This happens if your sound card can't control the volume on the hardware
 side or the driver doesn't support this feature of your sound card.
 Maybe updating ALSA or using another module will fix the problem. If
 nothing works, you can define a new virtual pcm device in the
-[.asoundrc](/.asoundrc ".asoundrc") file, which controls the volume on
+[.asoundrc](/Asoundrc "Asoundrc") file, which controls the volume on
 the software side.
-
-Once you followed this howto, please leave a small feedback on the
-[discussion
-page](?title=Talk:How_to_use_softvol_to_control_the_master_volume&action=edit&redlink=1 "Talk:How to use softvol to control the master volume (page does not exist)").
 
 Contents
 --------
@@ -113,6 +109,11 @@ won't use it to control master volume, unless you can make them choose
 another control (like
 [GMix](?title=GMix&action=edit&redlink=1 "GMix (page does not exist)")).
 
+The name you give to your control matters a lot. Some suffixes have
+special meanings. For example, if you want your softvol to control the
+playback volume only, the control name must end with `Playback Volume`.
+Such a name prevents the mixer from showing it as a capture control.
+
 Now test your new device with:
 
 ` `
@@ -138,6 +139,27 @@ automatically). In that case, add this to your asoundrc file:
     pcm.!default {
         type             plug
         slave.pcm       "softvol"
+    }
+
+With this configuration, our `softvol` device controls both playback and
+capture. This may not work properly for some setups. If you prefer that
+`softvol` controls the playback only, you must define a new default device
+which is of type `asym`: you can then decide that the playback is controlled
+by the softvol, and let the capture unchanged. In that case, you should add
+this to your asoundrc file:
+
+` `
+
+    pcm.!default {
+        type            asym
+        playback.pcm {
+            type        plug
+            slave.pcm   "softvol"
+        }
+        capture.pcm {
+            type        plug
+            slave.pcm   "<device name>"
+        }
     }
 
 If you have a multi channel sound card, you may want to upmix these
@@ -167,7 +189,7 @@ Common example with [dmix](/Dmix "Dmix")
 In the latest [ALSA](/ALSA "ALSA") versions (after 1.0.9)
 [dmix](/Dmix "Dmix") has been enabled by default for the boards that
 need it, so in order to benefit for both features (softvol+dmix) you
-must have in [\~/.asoundrc](/.asoundrc ".asoundrc") something like this:
+must have in [\~/.asoundrc](/Asoundrc "Asoundrc") something like this:
 
 ` `
 
