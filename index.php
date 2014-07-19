@@ -29,9 +29,9 @@ if ($page) {
 
 $menu = '';
 $menu_ary = [
-    ['README', '<i class="icon-fixed-width icon-file-text"></i>'],
-    ['Github', '<i class="icon-fixed-width icon-github-alt"></i>'],
-    ['User:Markc', '<i class="icon-fixed-width icon-user"></i>'],
+    ['README', '<i class="fa fa-file-text"></i>'],
+    ['Github', '<i class="fa fa-github-alt"></i>'],
+    ['User:Markc', '<i class="fa fa-user"></i>'],
 ];
 
 foreach($menu_ary as $m) {
@@ -46,9 +46,13 @@ foreach($menu_ary as $m) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="alsa linux audio">
+    <meta name="description" content="ALSA support site">
+    <meta name="author" content="(C) 2013-2014 Mark Constable (AGPL-3.0)">
+    <meta name="google-site-verification" content="L4CmEiRi_2aoQ3T2CYsZSQpBa05c3wZuIBONMmrgugU">
     <title><?= TITLE ?></title>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
 body { padding-top: 50px; overflow-y: scroll; }
 h1, h2, h3, h4 { border-bottom: 1px solid #eee; padding-bottom: 2px; margin-top: 20px; }
@@ -66,22 +70,22 @@ footer { text-align: center; color: #7F7F7F; font-style: italic; font-family: se
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><i class="icon-fixed-width icon-home"></i> <?= TITLE ?></a>
+          <a class="navbar-brand" href="/"><i class="fa fa-home"></i> <?= TITLE ?></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav"><?= $menu ?>
-          
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
     <div class="container">
       <?= $html ?>
-    
+
     </div>
     <footer><?= FOOTER ?>
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
