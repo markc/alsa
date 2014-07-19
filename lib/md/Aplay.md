@@ -1,9 +1,4 @@
-Aplay
-=====
-
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
+# Aplay
 
 **aplay** is a simple native ALSA wav player.
 
@@ -15,10 +10,7 @@ Contents
     -   [2.1 Device name](#Device_name)
     -   [2.2 What's a PCM output?](#What.27s_a_PCM_output.3F)
 
-Usage
------
-
-` `
+## Usage
 
        Usage: aplay [OPTION]... [FILE]...
        
@@ -66,13 +58,11 @@ of the card. If you already configured your
 [.asoundrc](/.asoundrc ".asoundrc") you may use name aliases defined
 there.
 
-Questions
----------
+## Questions
 
 ### Device name
 
-It would be nice to have "device
-name" explained (i.e. hw:0,0)
+It would be nice to have "device name" explained (i.e. hw:0,0)
 
 *It's ALSA-geek-speak for the initial hardware device that will convert
 digitzed sample to a smooth analog voltage or vice-versa. See below.*
@@ -105,10 +95,4 @@ the hardware part of a soundcard that takes a digital waveform (that may
 have been a wav or mp3 file on a hard drive) and converts it back into a
 smooth analog oscillating voltage that can produce sound from speakers
 or headphone, once amplified to a suitable level.*
-
-Retrieved from
-"[http://alsa.opensrc.org/Aplay](http://alsa.opensrc.org/Aplay)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Alsa-utils](/Category:Alsa-utils "Category:Alsa-utils")
 
