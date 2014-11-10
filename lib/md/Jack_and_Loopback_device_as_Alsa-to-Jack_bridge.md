@@ -376,6 +376,16 @@ of sample rate, audio format, buffer size, etc. One can find the
 relevant parameters in the [ALSA-lib
 documentation](http://www.alsa-project.org/alsa-doc/alsa-lib/pcm_plugins.html).
 
+Some html5 browsers (i.e. [Firefox 30](https://bugzilla.mozilla.org/show_bug.cgi?id=812900#c14); Chrome 38) will fail to open the pcm.!default device for audio playback. This can be fixed by using pcm.card0 instead:
+
+    # ------------------------------------------------------
+    # default device
+
+    pcm.card0 {
+      type plug
+      slave.pcm "aduplex"
+    }
+
 Here is an example applicable to my DAW. I left some notes so you
 understand the extra stuff I also removed unnecessary dsnoop's and
 dmix's because when you analyse things a bit more, you realize that some
