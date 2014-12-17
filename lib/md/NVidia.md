@@ -5,7 +5,7 @@ NVidia
 
 Jump to: [navigation](#mw-head), [search](#p-search)
 
-NVidia do not produce cound cards but their motherboard chipsets do
+NVidia do not produce sound cards but their motherboard chipsets do
 provide a PCI bus interface for audio chips mounted on the motherboard.
 As a result they can appear to be Nvidia sound cards. See [Sound Cards:
 Introduction](/Sound_Cards:_Introduction "Sound Cards: Introduction")
