@@ -1,10 +1,6 @@
 AlsaApps
 ========
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 This is just a seed page to start any threads about ALSA based apps. For
 now, just throw any notes anywhere and they will get organised
 eventually, or, by all means, get down and seriously add some pages if
@@ -17,9 +13,6 @@ Here's a link to the apps section of the jack website [might be of
 interest]:
 
 [http://jackit.sourceforge.net/apps/](http://jackit.sourceforge.net/apps/)
-
-Contents
---------
 
 -   [1 Ardour](#Ardour)
 -   [2 Jack](#Jack)
@@ -50,12 +43,6 @@ Muse
 
 See [muse](/Muse "Muse").
 
-Ltsb
-----
-
-See
-[ltsb](?title=Ltsb&action=edit&redlink=1 "Ltsb (page does not exist)").
-
 Hydrogen
 --------
 
@@ -80,7 +67,8 @@ details.
 Midicomp
 --------
 
-MidiComp is a SMF MIDI disassembler/compiler which will convert a MIDI
+[MidiComp](https://github.com/markc/midicomp)
+is a SMF MIDI disassembler/compiler which will convert a MIDI
 file into plain text and also convert that plain text version back into
 a playable MIDI file. Not strictly an ALSA app but uses ALSA to hear the
 results.
@@ -102,8 +90,6 @@ RTSynth a MIDI-event-triggered real-time synth
 1.  start RTsynth.
 2.  check the client/port ids via aconnect
 
-` `
-
        % aconnect -o
        ...
        client 128: 'RTSynth v1.9.2 synthesizer' [type=user]
@@ -112,8 +98,6 @@ RTSynth a MIDI-event-triggered real-time synth
 1.  load the patch from Examples directory.
 2.  turn on the power button of rtsynth.
 3.  play MIDI, e.g. via pmidi with the ids found above
-
-` `
 
        % pmidi -p 128:0 foo.wav
 
@@ -150,11 +134,6 @@ at the moment.
 Other applications?
 -------------------
 
-More hints for other applications ?
+More hints for other applications ?
 
-Retrieved from
-"[http://alsa.opensrc.org/AlsaApps](http://alsa.opensrc.org/AlsaApps)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Software](/Category:Software "Category:Software")
-
+Please fork this project at Github and send a pull request.
