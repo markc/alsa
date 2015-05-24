@@ -1,12 +1,8 @@
 AlsaApps
 ========
 
-This is just a seed page to start any threads about ALSA based apps. For
-now, just throw any notes anywhere and they will get organised
-eventually, or, by all means, get down and seriously add some pages if
-you feel so inclined. Here's a link to the apps section of the official
-ALSA webpage: http://www.alsa-project.org/main/index.php/Applications
-
+Here's the official ALSA webpage listing various applications:
+[http://www.alsa-project.org/main/index.php/Applications](http://www.alsa-project.org/main/index.php/Applications)
 
 -   [1 Ardour](#Ardour)
 -   [2 Jack](#Jack)
