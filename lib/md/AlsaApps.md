@@ -4,18 +4,18 @@ AlsaApps
 Here's the official ALSA webpage listing various applications:
 [http://www.alsa-project.org/main/index.php/Applications](http://www.alsa-project.org/main/index.php/Applications)
 
-1 [Ardour](#Ardour)
-2 [Jack](#Jack)
-3 [Muse](#Muse)
-4 [Hydrogen](#Hydrogen)
-5 [LinuxSampler](#LinuxSampler)
-6 [Midicomp](#Midicomp)
-7 [Rosegarden](#Rosegarden)
-8 [RTSynth](#RTSynth)
-9 [TiMidity](#TiMidity)
-10 [WildMidi](#WildMidi)
-11 [XMMS](#XMMS)
-12 [Other applications?](#Other_applications.3F)
+1. [Ardour](#Ardour)
+2. [Jack](#Jack)
+3. [Muse](#Muse)
+4. [Hydrogen](#Hydrogen)
+5. [LinuxSampler](#LinuxSampler)
+6. [Midicomp](#Midicomp)
+7. [Rosegarden](#Rosegarden)
+8. [RTSynth](#RTSynth)
+9. [TiMidity](#TiMidity)
+10. [WildMidi](#WildMidi)
+11. [XMMS](#XMMS)
+12. [Other applications?](#Other_applications.3F)
 
 <a id="Ardour"/>
 Ardour
@@ -29,11 +29,13 @@ Jack
 
 See [jack](/Jack "Jack").
 
+<a id="Muse"/>
 Muse
 ----
 
 See [muse](/Muse "Muse").
 
+<a id="Hydrogen"/>
 Hydrogen
 --------
 
@@ -48,6 +50,7 @@ isn't playing, then in Ardour, record-enable some tracks, click record,
 click play, and note that hydrogen starts playing instantly. Paul
 Winkler (from linux-audio-users)
 
+<a id="LinuxSampler"/>
 LinuxSampler
 ------------
 
@@ -55,6 +58,7 @@ LinuxSampler is a SoundFont (DLS2) and GigaSampler compatible softsynth
 only available via CVS at this stage. See the LinuxSampler page for more
 details.
 
+<a id="Midicomp"/>
 Midicomp
 --------
 
@@ -64,6 +68,7 @@ file into plain text and also convert that plain text version back into
 a playable MIDI file. Not strictly an ALSA app but uses ALSA to hear the
 results.
 
+<a id="Rosegarden"/>
 Rosegarden
 ----------
 
@@ -72,6 +77,7 @@ editor* and a *MIDI sequencer*. One of Rosegarden's major features is
 that musical notation is created automatically when you play a MIDI
 keyboard connected to your PC's soundcard.
 
+<a id="RTSynth"/>
 RTSynth
 -------
 
@@ -94,12 +100,14 @@ RTSynth a MIDI-event-triggered real-time synth
 
 - TakashiIwai
 
+<a id="TiMidity"/>
 TiMidity
 --------
 
 TiMidity is a soft synth that uses Gravis GusPatches and SoundFonts
 [http://www.onicos.com/staff/iz/timidity/](http://www.onicos.com/staff/iz/timidity/)
 
+<a id="WildMidi"/>
 WildMidi
 --------
 
@@ -107,6 +115,7 @@ WildMidi is a soft synth that uses the same configs and patches as
 Timidity
 [http://wildmidi.sourceforge.net/](http://wildmidi.sourceforge.net/)
 
+<a id="XMMS"/>
 XMMS
 ----
 
@@ -122,6 +131,7 @@ will select the digital output for the soundcard, and now
 some unknown reason, "mono" tracks don't play. Only "stereo" tracks work
 at the moment.
 
+<a id="Other applications.3F"/>
 Other applications?
 -------------------
 
