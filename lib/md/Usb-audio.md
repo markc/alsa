@@ -1,10 +1,6 @@
 Usb-audio
 =========
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 Contents
 --------
 
@@ -54,8 +50,6 @@ solve your problem.
 Here's the example for this module. Copy and paste this to the bottom of
 your /etc/modules.conf file.
 
-` `
-
     # ALSA portion
     alias char-major-116 snd
     alias snd-card-0 snd-usb-audio
@@ -74,8 +68,6 @@ To copy and paste the above to your /etc/modules.conf file follow these
 [instructions](/Instructions "Instructions").
 
 Here's a modules.conf file for the Emagic emi2|6.
-
-` `
 
     alias usb-controller usb-uhci
     # --- ALSA configuration
@@ -109,8 +101,6 @@ useful info available at
 Optimally setting irq resources for usb is essential for good
 performance. If possible set pci/usb irq, from best to worst:
 
-` `
-
     9,10,11,12,13,14,15,3,4,5,6,7
 
 **Request:** could somebody please provide info on what needs to be done
@@ -127,8 +117,6 @@ different period size that works well.
 Using Linux Kernel 2.6.8.1 with Ingo Molnar's 2.6.8.1-VP patches, jackd
 0.99.14 and alsa-lib 1.0.7, I'm able to get low latency audio with the
 emi 2|6::
-
-` `
 
     echo 0 > /proc/irq/11/ehci_hcd/threaded
     echo 0 > /proc/irq/11/uhci_hcd/threaded
@@ -189,28 +177,20 @@ called "USB bandwidth allocation" in the kernel. Here's the way out:
 -   In the kernel config ensure that both options (taken from a 2.6.10)
     are disabled::
 
-` `
-
     :[   ] Enforce USB bandwidth allocation (EXPERIMENTAL)
     :[   ] Dynamic USB minor allocation (EXPERIMENTAL)
 
 -   Ensure to load the snd-usb-audio module with the parameter
     "nrpacks=1", maybe including it into one of the boot scripts::
 
-` `
-
     modprobe snd-usb-audio nrpacks=1
 
 -   Or use the module configuration line (e.g. in /etc/modprobe.conf):
-
-` `
 
     options snd-usb-audio nrpacks=1
 
 -   Now invoke JACK with the following command (or entering the
     corresponding values into Qjackctl):
-
-` `
 
     jackd -R -P89 -dalsa -dhw:2 -r48000 -p256 -n3 -S
 
@@ -273,8 +253,6 @@ With ALSA 1.0.2c from the 2.6.9 kernel, the following (found elsewhere
 here) did the trick (and is mandatory for getting the EMI 6|2
 recording!):
 
-` `
-
     modprobe snd-usb-audio nrpacks=1
 
 Then I ran Jack with 48kHz, 16 or 24 bit samples, 512 or 1024 sample
@@ -317,8 +295,6 @@ The card works fine with the snd-usb-audio module. I've only tested the
 stereo output though. The X-Fi USB doesn't have a hardware mixer. So you
 have to use the softvol plugin along with dmix. Here is a simple
 \~/.asoundrc file that will give you a 'Master' Volume control.
-
-``
 
     pcm.!default {
         type            plug
@@ -383,8 +359,6 @@ Mute, setup \~/.lircrc . You need to have "irexec -d" running in the
 background for these commands to be executed. Everytime you change
 \~/.lircrc you need to restart irexec
 
-``
-
     # $HOME/.lircrc
     #S51 Volume Knob
     begin
@@ -437,8 +411,8 @@ playing a different, 48 kHz/24 bit sound on the analog output.
 The analog recording capability seems to be fixed at 48 kHz / 16 bit
 while the SPDIF can handle 44.1 kHz or 48 kHz, depending on the input.
 
-For instructions on setting up SPDIF see the page on [DigitalOut]
-(http://alsa.opensrc.org/DigitalOut).
+For instructions on setting up SPDIF see the page on
+[DigitalOut](http://alsa.opensrc.org/DigitalOut).
 
 The X-Fi HD's volume knob is just a knob that does not do anything
 directly with the volume - by default it does not do anything in Linux.
@@ -452,8 +426,6 @@ After installing LIRC you have to set up three files:
 -   /etc/lirc/lircrc - what to do when specific symbols are received
 
 /etc/lirc/hardware.conf should contain the following lines:
-
-` `
 
     DRIVER="devinput"
     DEVICE="/dev/input/by-id/usb-Creative_Technology_USB_Sound_Blaster_HD_000004Jt-event-if05"
@@ -471,8 +443,6 @@ hardware.conf.
 
 The actual code to change the volume is in /etc/lirc/lircrc, insert the
 following:
-
-` `
 
     # X-Fi HD Volume Knob
     begin
@@ -543,10 +513,3 @@ See also
 -   [USBMidiDevices](/USBMidiDevices "USBMidiDevices")
 -   [MultipleUSBAudioDevices](/MultipleUSBAudioDevices "MultipleUSBAudioDevices")
 -   [http://www.alsa-project.org/alsa-doc/doc-php/template.php?module=usb-audio](http://www.alsa-project.org/alsa-doc/doc-php/template.php?module=usb-audio)
-
-Retrieved from
-"[http://alsa.opensrc.org/Usb-audio](http://alsa.opensrc.org/Usb-audio)"
-
-[Category](/Special:Categories "Special:Categories"): [ALSA
-modules](/Category:ALSA_modules "Category:ALSA modules")
-
