@@ -437,6 +437,9 @@ playing a different, 48 kHz/24 bit sound on the analog output.
 The analog recording capability seems to be fixed at 48 kHz / 16 bit
 while the SPDIF can handle 44.1 kHz or 48 kHz, depending on the input.
 
+For instructions on setting up SPDIF see the page on [DigitalOut]
+(http://alsa.opensrc.org/DigitalOut).
+
 The X-Fi HD's volume knob is just a knob that does not do anything
 directly with the volume - by default it does not do anything in Linux.
 It shows up as a USB HID device and you need LIRC to use it.
