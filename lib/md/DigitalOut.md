@@ -1,15 +1,8 @@
 DigitalOut
 ==========
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 These instructions apply to digital connections using either electrical
 coax or optical connections.
-
-Contents
---------
 
 -   [1 Special terms](#Special_terms)
 -   [2 Overview](#Overview)
@@ -154,8 +147,6 @@ stream would make it completely invalid.
 **TODO: Tell people how to set "PCM out" mode. Add more common mixer
 settings, try to keep it simple and as general as possible.**
 
-\
-
 Find your device
 ----------------
 
@@ -168,13 +159,9 @@ alias. The ways to find either one are described below.
 On most cards the digital out is a specific audio playback device. To
 see which ALSA playback devices you have, you can use this command:
 
-` `
-
     aplay -l
 
 Sample output:
-
-` `
 
     [jranders@chickadee ~]$ aplay -l
     **** List of PLAYBACK Hardware Devices ****
@@ -261,13 +248,9 @@ reading. Otherwise, skip to the Use Your Device section.
 
 This is another command to show ALSA devices on your sound card:
 
-` `
-
     cat /proc/asound/devices
 
 Here is an example:
-
-` `
 
     tapas@mango:~$ cat /proc/asound/devices 
       1:       : sequencer
@@ -281,8 +264,6 @@ Here is an example:
 
 There are three audio playback devices:
 
-` `
-
      18: [0- 2]: digital audio playback
      17: [0- 1]: digital audio playback
      16: [0- 0]: digital audio playback
@@ -295,13 +276,9 @@ inside the square brackets ("`[x- y]`") are indexes for the soundcard
 (`x`) and the device (`y`) on that soundcard. So to play using the first
 playback device on the first card ("[0- 0]") you could use
 
-` `
-
     aplay -D hw:0,0 file.wav
 
 For the second and third you could use
-
-` `
 
     aplay -D hw:0,1 file.wav
     aplay -D hw:0,2 file.wav
@@ -310,13 +287,9 @@ If you receive a cryptic error message about "Channels count non
 available" then the wav file uses a sample rate different to the
 hardware. You can add a resampling layer with the 'plug' plugin, e.g.
 
-` `
-
     aplay -D plughw:0,0 file.wav
 
 Or with mplayer on [0- 0]:
-
-` `
 
     mplayer file.wav -ao alsa:device=hw=0.0
 
@@ -326,8 +299,6 @@ mixer settings described in the section above.
 
 On some hardware sound does not seem to come out reliably unless you
 specify a subdevice explicitly, e.g. "hw:0,1,1".
-
-\
 
 Use your device
 ---------------
@@ -372,8 +343,6 @@ Also note that when you start watching a DVD movie you might not get
 surround sound until you play the actual movie (i.e. previews or the
 menu often have no digital surround).
 
-\
-
 #### Test your setup
 
 A good test for "bit-perfect" digital passthrough (or S/PDIF
@@ -402,8 +371,6 @@ The parameters:
     play, you may need to use *-f dat* to force 48kHz sample rate, 16
     bit little endian sample format, which is often used on DVDs.
 
-\
-
 #### Solve problems
 
 If you hear screeching, modem-like sounds or noise with digital
@@ -426,8 +393,6 @@ mixer plugin. Look for user notes on your card at
 [ALSA modules](/ALSA_modules "ALSA modules") and [Sound
 cards](/Sound_cards "Sound cards"). Read about [dmix](/Dmix "Dmix") and
 [.asoundrc](/.asoundrc ".asoundrc") (asound.conf).
-
-\
 
 ### Configure your media player
 
@@ -469,8 +434,6 @@ file:
     audio.device.alsa_surround51_device:surround51:CARD=M2496,DEV=0
     audio.output.speaker_arrangement:Pass Through
 
-\
-
 Set digital out as default
 --------------------------
 
@@ -480,18 +443,8 @@ default playback device by using [.asoundrc](/.asoundrc ".asoundrc") or
 /etc/asound.conf. If you want your digital output to be the default you
 might need to add this:
 
-` `
-
     pcm.!default {
             type hw
             card <the card number you worked out above>
             device <the device number you worked out above>
     }
-
-Retrieved from
-"[http://alsa.opensrc.org/DigitalOut](http://alsa.opensrc.org/DigitalOut)"
-
-[Categories](/Special:Categories "Special:Categories"):
-[Howto](/Category:Howto "Category:Howto") |
-[Configuration](/Category:Configuration "Category:Configuration")
-
