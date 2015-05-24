@@ -4,24 +4,27 @@ AlsaApps
 Here's the official ALSA webpage listing various applications:
 [http://www.alsa-project.org/main/index.php/Applications](http://www.alsa-project.org/main/index.php/Applications)
 
--   [1 Ardour](#Ardour)
--   [2 Jack](#Jack)
--   [3 Muse](#Muse)
--   [4 Ltsb](#Ltsb)
--   [5 Hydrogen](#Hydrogen)
--   [6 LinuxSampler](#LinuxSampler)
--   [7 Midicomp](#Midicomp)
--   [8 Rosegarden](#Rosegarden)
--   [9 RTSynth](#RTSynth)
--   [10 TiMidity](#TiMidity)
--   [11 WildMidi](#WildMidi)
--   [12 XMMS](#XMMS)
--   [13 Other applications?](#Other_applications.3F)
+# [Ardour](#Ardour)
+# [Jack](#Jack)
+# [Muse](#Muse)
+# [Hydrogen](#Hydrogen)
+# [LinuxSampler](#LinuxSampler)
+# [Midicomp](#Midicomp)
+# [Rosegarden](#Rosegarden)
+# [RTSynth](#RTSynth)
+# [TiMidity](#TiMidity)
+# [WildMidi](#WildMidi)
+# [XMMS](#XMMS)
+# [Other applications?](#Other_applications.3F)
+
+<a id="Ardour"/>
 
 Ardour
 ------
 
 See [ardour](/Ardour "Ardour").
+
+<a id="Jack"/>
 
 Jack
 ----
