@@ -92,6 +92,16 @@ where your system has stored the required files.
 Now just plug in the USB cable for your US-122 and the top right hand
 side green **USB** light should come on.
 
+If you find that connecting the US-122 does *not* initialise it
+correctly (i.e. the green USB led does not light up), check the
+usb id of the device using lsusb. If it's "1604:8007", it may be
+that the second line in the above rules file is invoking usx2yloader
+before the hardware dependent interface has been raised. If so,
+changing this second line to the following may provide a fix (it
+did for the author of this paragraph):
+
+    SUBSYSTEM=="sound", ACTION=="add", KERNEL=="hwC2D0", RUN+="/bin/sh -c '/usr/bin/usx2yloader'"
+
 ### Audio Recording / Playback
 
 It may also be useful to use these **/etc/asound.conf** (or
