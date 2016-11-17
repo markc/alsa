@@ -100,7 +100,7 @@ before the hardware dependent interface has been raised. If so,
 changing this second line to the following may provide a fix (it
 did for the author of this paragraph):
 
-    SUBSYSTEM=="sound", ACTION=="add", KERNEL=="hwC2D0", RUN+="/bin/sh -c '/usr/bin/usx2yloader'"
+    SUBSYSTEM=="sound", ACTION=="add", ATTR{id}=="USX2Y", RUN+="/bin/sh -c '/usr/bin/usx2yloader'"
 
 ### Audio Recording / Playback
 
