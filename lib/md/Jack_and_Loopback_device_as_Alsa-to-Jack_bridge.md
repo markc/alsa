@@ -850,6 +850,10 @@ skype. The Intel HDA is available as well but I don't really need it. It
 is connected to my patch panel though, so I can always use it if the
 need comes (unlikely).
 
+### Troubleshooting
+
+If you have pulseaudio on you machine, better kill it, overwise it doesn't work.
+
 [Thorgal](/User:Thorgal "User:Thorgal") - May 3rd 2010
 
 Retrieved from
