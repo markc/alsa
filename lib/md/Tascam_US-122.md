@@ -76,7 +76,7 @@ available on Github to automate the steps below.
     
     dpkg-reconfigure alsa-base
     
-    # load the firmware
+    # determine bus and device number of the interface
     
     cd usx2yloader/
     lsusb
@@ -85,6 +85,7 @@ available on Github to automate the steps below.
     # Bus 003 Device 002: ID 1604:8007 Tascam US-122 Audio/Midi Interface
     #
     # note Bus and Device number and change the last two numbers accordingly
+    # to finally load the firmware.
     
     fxload -s ./tascam_loader.ihx -I /usr/share/alsa/firmware/usx2yloader/us122fw.ihx -D /dev/bus/usb/003/002
     
