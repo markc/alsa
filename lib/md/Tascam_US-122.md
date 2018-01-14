@@ -56,8 +56,8 @@ available on Github to automate the steps below.
     # package manager for your distribution)
 
     apt-get update
-    apt-get install fxload alsa-base alsa-firmware-loaders alsa-tools alsa-tools-gui alsa-utils 
-            alsamixergui alien
+    apt-get install fxload alsa-base alsa-firmware-loaders alsa-tools \
+    alsa-tools-gui alsa-utils alsamixergui alien
 
     # check for the latest package version first
  
@@ -81,8 +81,7 @@ available on Github to automate the steps below.
     cd usx2yloader/
     lsusb
     
-    # output of lsusb should show something like this (Bus and Device number can differ)
-    #
+    # output of lsusb should show a line like this
     # Bus 003 Device 002: ID 1604:8007 Tascam US-122 Audio/Midi Interface
     #
     # note Bus and Device number and change the last two numbers accordingly
