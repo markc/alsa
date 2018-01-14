@@ -89,9 +89,10 @@ available on Github to automate the steps below.
     
     fxload -s ./tascam_loader.ihx -I /usr/share/alsa/firmware/usx2yloader/us122fw.ihx -D /dev/bus/usb/003/002
     
-    # This command should initialize the Tascam US-122 and start the green LED on your device.
-    # If you don't want to set a special UDEV rule, you're going to have to enter this command
-    # after every restart or reconnect of the audio interface. 
+    # This following command should initialize the Tascam US-122 
+    # and start the green LED on your device.
+    # If you don't want to set a special UDEV rule, you're going to have to 
+    # enter this command after every restart or reconnect of the audio interface. 
     
     usx2yloader
     
