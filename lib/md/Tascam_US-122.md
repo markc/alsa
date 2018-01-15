@@ -5,8 +5,6 @@ Tascam US-122
 
 Jump to: [navigation](#mw-head), [search](#p-search)
 
-[File:Us122.gif](/File:Us122.gif "File:Us122.gif")
-
 Contents
 --------
 
@@ -15,10 +13,11 @@ Contents
 -   [2 Tascam US-122 on Debian and
     Ubuntu](#Tascam_US-122_on_Debian_and_Ubuntu)
     -   [2.1 Initial Setup](#Initial_Setup)
-    -   [2.2 Audio Recording / Playback](#Audio_Recording_.2F_Playback)
-    -   [2.3 Hardy Heron Fix](#Hardy_Heron_Fix)
-    -   [2.4 MIDI Example](#MIDI_Example)
-    -   [2.5 Mplayer Hint](#Mplayer_Hint)
+    -   [2.2 Plug and Play](#Plug_and_Play)
+    -   [2.3 Audio Recording / Playback](#Audio_Recording_.2F_Playback)
+    -   [2.4 Hardy Heron Fix](#Hardy_Heron_Fix)
+    -   [2.5 MIDI Example](#MIDI_Example)
+    -   [2.6 Mplayer Hint](#Mplayer_Hint)
 
 -   [3 Tascam US-122 on Slackware
     10.2](#Tascam_US-122_on_Slackware_10.2)
@@ -40,18 +39,12 @@ If you are looking for US-122L support check
 Tascam US-122 on Debian and Ubuntu
 ----------------------------------
 
-**Note:** This didn't work for me on [sidux](http://sidux.com/) (Debian
-sid, Dez/05/2009), whereas [this
-howto](https://help.ubuntu.com/community/TASCAM_US-122) did it for me.
-[Micu](/User:Micu "User:Micu") 20:50, 5 December 2009 (EST)
-
 ### Initial Setup
 
-**Circa 2007-04-20** - follow these instructions and then simply plug in
-your US-122. It will probably become your second sound card device so
-you will need to tell most applications to use the **hw:1** device (ie;
-from within Amarok etc). This would probably work for the US-224 and
-US-248 as well.
+**2018-01-18** - plug in your US-122 and then simply follow these 
+instructions. If you'd like to automate the process you can use this
+[Installer](https://github.com/mdnghtman/us122-linux/blob/master/tascam-us_122.sh) 
+available on Github to automate the steps below.
 
     # open up a shell and change to root (or prepend
     # sudo to all instructions) and type in your normal
@@ -59,27 +52,55 @@ US-248 as well.
 
     sudo -i -u root
 
-    # download these two packages (use the appropriate
+    # download these eight packages (use the appropriate
     # package manager for your distribution)
 
     apt-get update
-    apt-get install fxload alsa-firmware-loaders
+    apt-get install fxload alsa-base alsa-firmware-loaders alsa-tools \
+    alsa-tools-gui alsa-utils alsamixergui alien
 
     # check for the latest package version first
-    # Updated: 2008-06-12
+ 
+    wget ftp://ftp.alsa-project.org/pub/firmware/alsa-firmware-1.0.29.tar.bz2
 
-    wget ftp://ftp.alsa-project.org/pub/firmware/alsa-firmware-1.0.16.tar.bz2
+    # untar the ALSA firmware package
 
-    # untar the ALSA firmware package (older versions
-    # of tar may need to use xjf)
+    tar -xvjf alsa-firmware-1.0.29.tar.bz2
 
-    tar xf alsa-firmware-1.0.16.tar.bz2
-
-    # move the essential components to a standard
-    # place (for example a firmware folder), modify for an updated firmware package
-
-    mkdir /usr/share/alsa/firmware
-    cd alsa-firmware-1.0.16 && mv * /usr/share/alsa/firmware
+    # build and install ALSA Firmware
+    
+    cd alsa-firmware-1.0.29
+    ./configure --prefix=/usr && sudo make install
+    
+    # reconfigure alsa-base
+    
+    dpkg-reconfigure alsa-base
+    
+    # determine bus and device number of the interface
+    
+    cd usx2yloader/
+    lsusb
+    
+    # output of lsusb should show a line like this
+    # Bus 003 Device 002: ID 1604:8007 Tascam US-122 Audio/Midi Interface
+    #
+    # note Bus and Device number and change the last two numbers accordingly
+    # to finally load the firmware.
+    
+    fxload -s ./tascam_loader.ihx -I /usr/share/alsa/firmware/usx2yloader/us122fw.ihx -D /dev/bus/usb/003/002
+    
+    # This following command should initialize the Tascam US-122 
+    # and start the green LED on your device.
+    # If you don't want to set a special UDEV rule, you're going to have to 
+    # enter this command after every restart or reconnect of the audio interface. 
+    
+    usx2yloader
+    
+    # if you get "no usx2y-compatible cards found" enter the following
+    
+    ln -s /usr/share/alsa/firmware/usx2yloader /lib/firmware/usx2yloader
+    
+### Plug and Play
 
 Create a special rule for UDEV to autoload the firmware in
 **/etc/udev/rules.d/55-tascam.rules** (requires a kernel \> 2.6.15) by
