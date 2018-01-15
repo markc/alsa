@@ -154,12 +154,6 @@ do not work with a US-122.
     file test.wav
     test.wav: RIFF (little-endian) data, WAVE audio, Microsoft PCM, 24 bit, stereo 48000 Hz
 
-Here is a [short 10 second 3.5 MB wav voice
-recording](/images/US122-24bit-48k.wav "US122-24bit-48k.wav") (Signed 24
-bit Little Endian in 3bytes, Rate 48000 Hz, Stereo) using a Tascam
-US-122 USB external sound card with a pair of Behringer B1 condenser
-microphones.
-
 ### Hardy Heron Fix
 
 From energymomentum on the Ubuntu forums
