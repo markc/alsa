@@ -1,10 +1,6 @@
 Tascam US-122
 =============
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 Contents
 --------
 
@@ -364,10 +360,3 @@ To make the change permanent, create (referring to Ubuntu)
 /etc/modprobe.d/snd-usb-usx2y with the following content:
 
     option snd-usb-usx2y nrpacks=1
-
-Retrieved from
-"[http://alsa.opensrc.org/Tascam\_US-122](http://alsa.opensrc.org/Tascam_US-122)"
-
-[Category](/Special:Categories "Special:Categories"): [Sound
-cards](/Category:Sound_cards "Category:Sound cards")
-
