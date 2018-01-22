@@ -1,8 +1,9 @@
 <?php
-// github-post-receive.php 20130810
+// github-post-receive.php 20130810 - 20180123
 // https://gist.github.com/samdark/3752870
+// Copyright (C) 1995-2018 Mark Constable <markc@renta.net> (AGPL-3.0)
 
-error_log(var_export($_REQUEST,true));
+//error_log(var_export($_REQUEST,true));
 
 function cidr_match($ip, $ranges)
 {
