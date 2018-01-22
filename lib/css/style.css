@@ -1,0 +1,166 @@
+@font-face{font-family:'Quicksand';font-style:normal;font-weight:300;src:local('Quicksand Light'),
+local('Quicksand-Light'),
+url('//cdn.renta.net/lib/fonts/Quicksand_300.eot?#iefix') format('embedded-opentype'),
+url('//cdn.renta.net/lib/fonts/Quicksand_300.woff') format('woff'),
+url('//cdn.renta.net/lib/fonts/Quicksand_300.woff2') format('woff2'),
+url('//cdn.renta.net/lib/fonts/Quicksand_300.svg#Quicksand') format('svg'),
+url('//cdn.renta.net/lib/fonts/Quicksand_300.ttf') format('truetype');}
+@font-face{font-family:'Quicksand';font-style:normal;font-weight:400;src:local('Quicksand Regular'),
+local('Quicksand-Regular'),
+url('//cdn.renta.net/lib/fonts/Quicksand_400.eot?#iefix') format('embedded-opentype'),
+url('//cdn.renta.net/lib/fonts/Quicksand_400.woff') format('woff'),
+url('//cdn.renta.net/lib/fonts/Quicksand_400.woff2') format('woff2'),
+url('//cdn.renta.net/lib/fonts/Quicksand_400.svg#Quicksand') format('svg'),
+url('//cdn.renta.net/lib/fonts/Quicksand_400.ttf') format('truetype');}
+@font-face{font-family:'Quicksand';font-style:normal;font-weight:500;src:local('Quicksand Medium'),
+local('Quicksand-Medium'),
+url('//cdn.renta.net/lib/fonts/Quicksand_500.eot?#iefix') format('embedded-opentype'),
+url('//cdn.renta.net/lib/fonts/Quicksand_500.woff') format('woff'),
+url('//cdn.renta.net/lib/fonts/Quicksand_500.woff2') format('woff2'),
+url('//cdn.renta.net/lib/fonts/Quicksand_500.svg#Quicksand') format('svg'),
+url('//cdn.renta.net/lib/fonts/Quicksand_500.ttf') format('truetype');}
+@font-face{font-family:'icomoon';src:url('//cdn.renta.net/lib/fonts/icomoon.eot?23xten');src:url('//cdn.renta.net/lib/fonts/icomoon.eot?23xten#iefix') format('embedded-opentype'),
+url('//cdn.renta.net/lib/fonts/icomoon.ttf?23xten') format('truetype'),
+url('//cdn.renta.net/lib/fonts/icomoon.woff?23xten') format('woff'),
+url('//cdn.renta.net/lib/fonts/icomoon.svg?23xten#icomoon') format('svg');font-weight:normal;font-style:normal;}
+[class^="icon-"], [class*=" icon-"]{font-family:'icomoon' !important;speak:none;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;}
+.icon-envelope-o:before{content:"\f003";}
+.icon-user:before{content:"\f007";}
+.icon-home:before{content:"\f015";}
+.icon-headphones:before{content:"\f025";}
+.icon-calendar:before{content:"\f073";}
+.icon-shopping-cart:before{content:"\f07a";}
+.icon-key:before{content:"\f084";}
+.icon-cogs:before{content:"\f085";}
+.icon-gears:before{content:"\f085";}
+.icon-sign-out:before{content:"\f08b";}
+.icon-external-link:before{content:"\f08e";}
+.icon-sign-in:before{content:"\f090";}
+.icon-phone:before{content:"\f095";}
+.icon-phone-square:before{content:"\f098";}
+.icon-globe:before{content:"\f0ac";}
+.icon-group:before{content:"\f0c0";}
+.icon-users:before{content:"\f0c0";}
+.icon-sort:before{content:"\f0dc";}
+.icon-unsorted:before{content:"\f0dc";}
+.icon-sort-desc:before{content:"\f0dd";}
+.icon-sort-down:before{content:"\f0dd";}
+.icon-sort-asc:before{content:"\f0de";}
+.icon-sort-up:before{content:"\f0de";}
+.icon-envelope:before{content:"\f0e0";}
+.icon-comment-o:before{content:"\f0e5";}
+.icon-comments-o:before{content:"\f0e6";}
+.icon-sitemap:before{content:"\f0e8";}
+.icon-building-o:before{content:"\f0f7";}
+.icon-laptop:before{content:"\f109";}
+.icon-smile-o:before{content:"\f118";}
+.icon-keyboard-o:before{content:"\f11c";}
+.icon-microphone:before{content:"\f130";}
+.icon-check-square:before{content:"\f14a";}
+.icon-youtube-square:before{content:"\f166";}
+.icon-linux:before{content:"\f17c";}
+.icon-dot-circle-o:before{content:"\f192";}
+.icon-envelope-square:before{content:"\f199";}
+.icon-wordpress:before{content:"\f19a";}
+.icon-child:before{content:"\f1ae";}
+.icon-paper-plane-o:before{content:"\f1d9";}
+.icon-send-o:before{content:"\f1d9";}
+.icon-newspaper-o:before{content:"\f1ea";}
+.icon-cc-paypal:before{content:"\f1f4";}
+.icon-street-view:before{content:"\f21d";}
+.icon-server:before{content:"\f233";}
+.icon-sticky-note-o:before{content:"\f24a";}
+.icon-shopping-basket:before{content:"\f291";}
+.icon-question-circle-o:before{content:"\f29c";}
+.icon-handshake-o:before{content:"\f2b5";}
+.icon-user-circle:before{content:"\f2bd";}
+.icon-user-circle-o:before{content:"\f2be";}
+.icon-user-o:before{content:"\f2c0";}
+*, *:before, *:after{box-sizing:border-box;}
+a:hover{color:#df0000;}
+a{color:#2c5871;outline:none;transition:all .25s ease;}
+body,html{min-height:100%;height:100%;}
+body{margin:0;padding:4.5em 0 0 0;font-size:16px;line-height:1.5em;color:#2c5871;font-family:'Quicksand', sans-serif;font-weight:400;text-shadow:0 1px 1px rgba(0, 0, 0, 0.2);}
+html{scroll-behavior:smooth;background-attachment:fixed;background-position:center center;background-repeat:no-repeat;background-size:cover;height:100%;min-height:100%;}
+form{margin-bottom:1em;}
+footer a{color:#ffffff;text-decoration:none;}
+footer p{flex:1;}
+footer{background-color:#3f3e3d;color:#fff;padding:2em;font-style:italic;}
+footer{flex-direction:column;opacity:0.94;}
+h1, h2, h3, p, ul{margin-top:0;}
+h1, h2, h3{margin-bottom:0.5em;line-height:1;}
+img{display:block;border:0;width:100%;height:auto;margin:1em 0;}
+input,textarea{color:#ffffff;width:100%;padding:0.5em;font-size:18px;box-shadow:0px 1px 4px 0px rgba(0,0,0,0.6);margin-bottom:0.75em;border:1px solid transparent;background-color:rgba(255, 255, 255, 0.3);}
+input[type=submit]{width:10rem;}
+input:hover,textarea:hover{box-shadow:0px 1px 4px 0px rgba(0,0,0,0.8);background-color:rgba(255, 255, 255, 0.5);}
+input#menu-toggle:checked ~ nav#topnav a.link{display:inline-block;padding:1em 1em 0 1em;}
+input#menu-toggle:checked ~ nav#topnav{display:flex;flex-direction:column;align-items:flex-start;}
+input#menu-toggle{display:none;}
+label.label-toggle{background:linear-gradient(to bottom, #2c5871 0%, #2c5871 20%, transparent 20%, transparent 40%, #2c5871 40%, #2c5871 60%, transparent 60%, transparent 80%, #2c5871 80%, #2c5871 100%);cursor:pointer;display:block;float:right;height:1.5em;width:1.5em;z-index:99;margin:0.5em 1em;}
+li ol > li:before{content:counters(item, ".") " ";}
+li ol > li{margin:0;padding:0.5em 0 0 0;}
+nav#topnav a, a.btn{text-decoration:none;}
+nav#topnav a.link{display:none;}
+nav#topnav{z-index:99;}
+nav, footer{align-items:center;display:flex;justify-content:space-between;}
+ol > li > ol > li > ol > li > ol > li:before{width:3.5em;}
+ol > li > ol > li > ol > li:before{width:2.75em;}
+ol > li > ol > li:before{width:1.75em;}
+ol > li:before{width:1.25em;content:counters(item, ".") ". ";display:table-cell;}
+ol > li{display:table;counter-increment:item;margin-bottom:1em;}
+ol{list-style-type:none;counter-reset:item;margin:0;padding:0;}
+pre {background-color:#eee;max-width:100%;overflow:auto;padding:1em;}
+p code {background-color:#eee;padding: .2em .4em;border-radius: 2px;}
+.blu{color:#2c5871;}
+.btn-danger:hover{color:#fff;background-color:#ff0000;border-color:#df0000;text-decoration:none;}
+.btn-danger{color:#fff;background-color:#df0000;border-color:#bf0000;}
+.btn-success:hover{color:#fff;background-color:#449d44;border-color:#398439;text-decoration:none;}
+.btn-success{color:#fff;background-color:#5cb85c;border-color:#4cae4c;}
+.btn{background-image:none;border-radius:0.25em;border:1px solid transparent;cursor:pointer;display:inline-block;margin-bottom:0;padding:0.3em 1em;text-align:center;vertical-align:middle;white-space:nowrap;}
+.center{text-align:center;}
+.container{margin:0 auto;max-width:960px;padding:.5rem;}
+.dark{color:#3f3e3d;}
+.glass{opacity:0.9;background-color:#ffffff;padding:1em;z-index:0;}
+.heading{font-size:1.25em;text-align:center;font-style:italic;padding-bottom:0;}
+.justify{text-align:justify;}
+.large{font-size:4em;line-height:1;font-weight:500;padding-bottom:1em;}
+.left{text-align:left;}
+.lhs_note h2,.rhs_note h2{margin-bottom:0.5em;}
+.lhs_note,.rhs_note{padding:1em 1em 0.25em 1em;}
+.lhs_note a,.rhs_note a{color: #ffffff;}
+.lhs_note{background-color:rgba(44, 88, 113, 0.94);color:#ffffff;}
+.lite{color:#ffffff;}
+.navbar a.logo{font-size:2em;}
+.navbar a:hover{text-decoration:none;}
+.navbar{background-color:#ffffff;position:fixed;top:0;width:100%;box-shadow:0 5px 5px rgba(0,0,0,.1);padding:.5em 0;z-index:99;}
+.notes{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1fr;}
+.product ul.extras{padding-left:1em;}
+.product ul{text-align:left;}
+.product:hover{box-shadow:0 0.2em 0.4em rgba(0, 0, 0, 0.5);background-color:#eeeeee;}
+.products{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1fr 1fr 1fr;grid-gap:1em;}
+.product{opacity:0.94;box-shadow:0 0 1.5em rgba(0, 0, 0, 0.25);transition:all .25s ease;display:flex;flex-direction:column;justify-content:space-between;background-color:#ffffff;text-align:center;padding:0.75em;border-radius:0.5em;}
+.ptitle{padding-top:0.25em;font-size:1.75em;font-weight:500;margin-bottom:0.5em;}
+.red{color:#df0000;}
+.rhs_note{background-color:rgba(223, 0, 0, 0.94);color:#ffffff;}
+.right{text-align:right;}
+.store{padding:1em;}
+@keyframes fadein{from{opacity:0;}to{opacity:1;}}
+@keyframes slideup{0%{transform:translate(0,600px);opacity:0;}100%{transform:translate(0,0);opacity:1;}}
+@media screen and (min-width:400px){
+img{float:right;width:33%;height:auto;margin:0.5em 0 0.5em 1em;opacity:1;}
+.products{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+}
+@media screen and (min-width:799px){footer{flex-direction:row;}
+input#menu-toggle{display:none;}
+label.label-toggle{display:none;}
+nav#topnav a.link{display:inline-block;}
+li ol > li{text-align:justify;}
+.intro,.linux{column-gap:2em;columns:2;text-align:justify;}
+.lhs_note, .rhs_note{padding:2em 2em 0.5em 2em;}
+.products{grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:1fr;}
+.notes{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr;}
+.glass{padding:2em 2em 1em 2em;}
+}
+/* override of //cdn.renta.net/lib/css/rentanet.css */
+footer,footer a{background-color:transparent;color:#2c5871}
+.navbar a.logo {margin-top:-3px;}

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    local('//cdn.renta.net/lib/fonts/Quicksand Regular'),
+    local('//cdn.renta.net/lib/fonts/Quicksand-Regular'),
+    /* from https://fonts.gstatic.com/s/quicksand/v6/sKd0EMYPAh5PYCRKSryvW_Y6323mHUZFJMgTvxaG2iE.eot */
+    url('//cdn.renta.net/lib/fonts/Quicksand.eot?#iefix') format('embedded-opentype'),
+    /* from https://fonts.gstatic.com/s/quicksand/v6/sKd0EMYPAh5PYCRKSryvWz8E0i7KZn-EPnyo3HZu7kw.woff */
+    url('//cdn.renta.net/lib/fonts/Quicksand.woff') format('woff'),
+    /* from https://fonts.gstatic.com/s/quicksand/v6/sKd0EMYPAh5PYCRKSryvW1tXRa8TVwTICgirnJhmVJw.woff2 */
+    url('//cdn.renta.net/lib/fonts/Quicksand.woff2') format('woff2'),
+    /* from https://fonts.gstatic.com/l/font?kit=sKd0EMYPAh5PYCRKSryvW5bd9NUM7myrQQz30yPaGQ4&skey=c01f11fa5439d932&v=v6#Quicksand */
+    url('//cdn.renta.net/lib/fonts/Quicksand.svg#Quicksand') format('svg'),
+    /* from https://fonts.gstatic.com/s/quicksand/v6/sKd0EMYPAh5PYCRKSryvW6CWcynf_cDxXwCLxiixG1c.ttf */
+    url('//cdn.renta.net/lib/fonts/Quicksand.ttf') format('truetype');
+}
