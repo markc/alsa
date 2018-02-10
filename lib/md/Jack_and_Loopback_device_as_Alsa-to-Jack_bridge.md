@@ -34,8 +34,7 @@ Contents
     -   [6.2 Capture and Playback](#Capture_and_Playback)
     -   [6.3 Final word](#final_word)
 
-Introduction
-------------
+## Introduction {#introducttion}
 
 Some people may use PCs where the [Jack Audio Connection
 Kit](http://jackaudio.org) is running all the time. As [one of these
