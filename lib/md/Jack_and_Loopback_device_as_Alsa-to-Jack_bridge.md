@@ -8,9 +8,9 @@ Contents
 
 -   [1 Introduction](#id01)
 -   [2 The ALSA Loopback 'Sound card'](#id02)
-    -   [2.1 Compiling snd-aloop if needed](#Compiling_snd-aloop_if_needed)
-    -   [2.2 Understanding the ALSA Loopback sound card structure](#Understanding_the_ALSA_Loopback_sound_card_structure)
--   [3 Building an asoundrc file](#Building_an_asoundrc_file)
+    -   [2.1 Compiling snd-aloop if needed](#id03)
+    -   [2.2 Understanding the ALSA Loopback sound card structure](#id04)
+-   [3 Building an asoundrc file](#id05)
     -   [3.1 asoundrc definition](#asoundrc_definition)
     -   [3.2 testing our new default ALSA device](#testing_our_new_default_alsa_device)
 -   [4 The Jack Bridge](#the_jack_bridge)
@@ -128,6 +128,7 @@ As you can see, I do fix indexes even though ALSA and Jack can work with
 names only. It is motivated by the special position that is index 0, the
 ALSA default device that flashplayer will try to use.
 
+<a id="id03"></a>
 ### Compiling `snd-aloop` if needed
 
 Update: it may not be needed any longer as of kernel 2.6.38 ...
@@ -251,6 +252,7 @@ ALSA installation, no problem:
     sudo cp -a ~/backup/sound /lib/modules/`uname -r`/kernel/
     sudo alsa force-reload
 
+<a id="id04"></a>
 ### Understanding the ALSA Loopback sound card structure
 
 Well, this is not too difficult to grasp. This virtual sound card
@@ -271,8 +273,9 @@ So the generic principle is that an output signal to subdevice
     j = ~i (meaning if i = 0, j = 1 and vice-versa)
     n = [0.. (s-1)] with s = number of subdevices (controlled by module option pcm_substreams)
 
-Building an `asoundrc` file
----------------------------
+<a id="id05"></a><br>
+
+## Building an `asoundrc` file
 
 The goal is to create a default ALSA plug device out of the Loopback
 card. For a complete software solution, we need one PCM playback, so
