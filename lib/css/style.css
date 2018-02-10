@@ -133,7 +133,7 @@ p code {background-color:#eee;padding: .2em .4em;border-radius: 2px;}
 .lite{color:#ffffff;}
 .navbar a.logo{font-size:2em;}
 .navbar a:hover{text-decoration:none;}
-.navbar{background-color:#ffffff;position:fixed;top:0;width:100%;box-shadow:0 5px 5px rgba(0,0,0,.1);padding:.5em 0;z-index:99;}
+.navbar{background-color:#ffffff;position:fixed;top:0;width:100%;box-shadow:0 5px 5px rgba(0,0,0,.1);padding:.5em 0;z-index:99;opacity:0.95}
 .notes{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1fr;}
 .product ul.extras{padding-left:1em;}
 .product ul{text-align:left;}
