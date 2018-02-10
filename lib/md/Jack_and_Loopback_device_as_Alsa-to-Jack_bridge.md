@@ -1,9 +1,7 @@
 Jack and Loopback device as Alsa-to-Jack bridge
 ===============================================
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
+##### By Thorgal - May 3rd 2010
 
 Contents
 --------
@@ -97,8 +95,6 @@ By default, the Loopback sound card consists of 2 devices, each composed
 of 8 subdevices. Once the kernel module `snd-aloop` is loaded, you can
 verify that the sound card has been created:
 
-` `
-
     ~$ aplay -l
 
     **** List of PLAYBACK Hardware Devices ****
@@ -132,8 +128,6 @@ option `pcm_substreams` (8 by default). You can always set it to 2 only
 if you wish at loading time. As an example, here is my ALSA module
 config file (`/etc/modprobe.d/sound.conf` on my debian-based DAW)
 
-` `
-
     alias snd-card-0 snd-aloop
     alias snd-card-1 snd-hdsp
     alias snd-card-2 snd-hda-intel
@@ -162,7 +156,6 @@ compiled fine, it would not load at all, even when forced. So don't
 waste your time with this version combo.*
 
 Make sure you really don't have it installed. Better check that not :)
-` `
 
     sudo modinfo snd-aloop
 
@@ -181,7 +174,7 @@ Time to make a backup of the installed kernel modules. Example: ` `
 
 Prerequisite: you of course need a compiler and other tools. In debian
 based distros, you can check that you have a package called
-`build-essential` installed: ` `
+`build-essential` installed:
 
     dpkg -l build-essential
 
@@ -194,8 +187,6 @@ ALSA, in my case 1.0.23 which I will use in my description) from the
 [The ALSA website](http://www.alsa-project.org), uncompress, untar it
 and cd to the alsa-driver top dir. Here is a command summary
 
-` `
-
     cd
     mkdir source
     cd source
@@ -204,11 +195,11 @@ and cd to the alsa-driver top dir. Here is a command summary
     cd alsa-driver-1.0.23
 
 Now you have to configure the source package for compilation. To help
-you, look at what ALSA modules are currently loaded: ` `
+you, look at what ALSA modules are currently loaded:
 
     cat /proc/asound/modules
 
-And check what card they correspond to by typing ` `
+And check what card they correspond to by typing
 
     ./configure --help
 
@@ -216,19 +207,15 @@ You will see a big list of possible cards. Pick the ones you are
 interested in. As an example, this is how I configured the alsa-driver
 source on my DAW system:
 
-` `
-
     ./configure --with-cards=hdsp,loopback,hrtimer --with-oss=yes --with-sequencer=yes
 
 and on my laptop:
-
-` `
 
     ./configure --with-cards=intel8x0,loopback,hrtimer --with-oss=yes --with-sequencer=yes
 
 So, feel free to configure it the way you want it. Once you have
 configured the ALSA driver source, you just go through the usual
-sequence: ` `
+sequence:
 
     make
     sudo make install
@@ -236,8 +223,6 @@ sequence: ` `
 It will normally install all the compiled modules into the correct
 location of your kernel installation. Now check that the kernel knows
 about the loopback module:
-
-` `
 
     ~$ sudo modinfo snd-aloop
     filename:       /lib/modules/2.6.32/kernel/sound/drivers/snd-aloop.ko
@@ -253,15 +238,13 @@ about the loopback module:
     parm:           pcm_substreams:PCM substreams # (1-8) for loopback driver. (array of int)
 
 Allrighty, time to load it. But before that, shut down all audio apps
-(including firefox). Once done, do this: ` `
+(including firefox). Once done, do this:
 
     sudo alsa force-unload  
     sudo modprobe snd-whatever-module-you-need 
     sudo modprobe snd-aloop 
 
 Now, see if it works:
-
-` `
 
     ~$ lsmod | grep aloop
     snd_aloop               4732  0
@@ -274,7 +257,7 @@ you wish, you can give the loopback soundcard another name than
 entire HOWTO and there is no need to change it.)
 
 In case anything went wrong and you wish to go back to your previous
-ALSA installation, no problem: ` `
+ALSA installation, no problem:
 
     sudo rm /lib/modules/`uname -r`/kernel/sound
     sudo cp -a ~/backup/sound /lib/modules/`uname -r`/kernel/
@@ -295,7 +278,6 @@ this card is to send the signal back to itself.
 
 So the generic principle is that an output signal to subdevice
 `hw:Loopback,i,n` becomes an input signal from `hw:Loopback,j,n` with
-` `
 
     i = [0..1]
     j = ~i (meaning if i = 0, j = 1 and vice-versa)
@@ -313,13 +295,11 @@ device.
 Note that the underlying goal is this: I want the audio of my jack
 system capture ports (from my RME card) to be available at the ALSA
 capture device and vice-versa: hear from my jack system playback ports
-what ALSA apps are playing back to the ALSA playback device. Tricky ...
+what ALSA apps are playing back to the ALSA playback device. Tricky...
 
 ### asoundrc definition
 
 The asoundrc below should work in most situations.
-
-` `
 
     # playback PCM device: using loopback subdevice 0,0
     pcm.amix {
@@ -370,8 +350,7 @@ In summary:
      * Jack readable client (cloop) = subdevice 1,0
      * Jack writable client (ploop) = subdevice 1,1
 
-\
- This asoundrc is very generic and one can of course tailor it in terms
+This asoundrc is very generic and one can of course tailor it in terms
 of sample rate, audio format, buffer size, etc. One can find the
 relevant parameters in the [ALSA-lib
 documentation](http://www.alsa-project.org/alsa-doc/alsa-lib/pcm_plugins.html).
@@ -395,8 +374,6 @@ ALSA playback PCM because you can have more than one client outputting
 to ALSA at the same time. Anyway, note the hardware parameters I have
 added so that it matches my RME Multiface II requirements. For the dmix
 buffering parameters, read on below.
-
-` `
 
     # ------------------------------------------------------
     # hardware 0,0 : used for ALSA playback
@@ -502,7 +479,7 @@ other hardware (RME card in my case), you of course will not hear
 anything since we have not bridged yet our default ALSA device to the
 jack graph.
 
-` mplayer -ao alsa some_audio_file`
+    mplayer -ao alsa some_audio_file
 
 You can use another app (`aplay` for example). The idea is that an ALSA
 app using the default device we have just created will not spit error
@@ -523,13 +500,10 @@ loopback to the corresponding subdevices, respectively 1,0 and 1,1 in
 this case. So the trick for jack is to use alsa\_in and alsa\_out on the
 latter subdevices :) Brilliant ins't it ? :D
 
-Let's do it from the terminal ` `
+Let's do it from the terminal
 
     # capture client
     alsa_in -j cloop -dcloop
-
-` `
-
     # playback client
     alsa_out -j ploop -dploop 
 
@@ -541,13 +515,12 @@ can now be connected to the jack system output ports and o miracle, you
 will hear your ALSA app :)
 
 In order to avoid the warning messages from alsa\_in/out, you can add
-the relevant parameters, e.g. (my case): ` `
+the relevant parameters, e.g. (my case):
 
      alsa_in -j cloop -dcloop -n 2 -p 256 -r 96000
 
-\
- On the other hand, if you connect a jack system input port to the
-"ploop" client created by alsa\_out, the signal is sent to loopback
+On the other hand, if you connect a jack system input port to the
+"ploop" client created by alsa_out, the signal is sent to loopback
 subdevice 1,1 which will be looped back to subdevice 0,1. This subdevice
 is nothing but our ALSA capture device, defined in asoundrc :). So now
 you can record say your bass or guitar or voice (from your jack
@@ -568,8 +541,6 @@ The beauty of it is two-fold:
 
 The creation of the "p/cloop" clients can be automated, together with
 their connection to jack system ports. Here is my script:
-
-` `
 
     #!/bin/sh
     # script loop2jack, located in /usr/local/bin
@@ -600,7 +571,7 @@ and the quality is reasonable. If you push it to 2, 3 or 4, the CPU will
 increase quite a lot at small buffering / latency*
 
 In qjackctl (which I use, YMMV), go to Options -\> Execute *after*
-server startup and add ` `
+server startup and add
 
     /usr/local/bin/loop2jack
 
@@ -641,8 +612,6 @@ stuff related to "ploop" in the previous asoundrc), I simply declared
 the extra h/w in the asoundrc. So I removed all the ploop stuff
 including the now useless Loopback subdevices used for ALSA capture and
 alsa\_out, and added hw PCM devices on the Intel device and USB webcam.
-
-` `
 
     # ------------------------------------------------------
     # hardware 0,0 : used for ALSA playback
@@ -711,10 +680,6 @@ alsa\_out, and added hw PCM devices on the Intel device and USB webcam.
     }
 
     # ------------------------------------------------------
-    # ------------------------------------------------------
-    # ------------------------------------------------------
-
-    # ------------------------------------------------------
     # duplex device combining our PCM devices defined above
     pcm.aduplex {
       type asym
@@ -750,7 +715,7 @@ out of the box in linux due to its class compliance with USB vid.
 
 Note that the same thing can be done with the Intel HDA capture ("intel"
 pcm capture defined in the previous asoundrc) provided that you plug a
-mic to its input jack of course :).
+mic to its input jack of course :)
 
 Measuring the latency introduced by the Loopback device
 -------------------------------------------------------
@@ -765,7 +730,7 @@ I used ecasound as the middle-man for allowing the measuring of the
 eventual delay in ardour (which I am comfortable with, you can of course
 use another jack enabled recording software if you want).
 
-Here is the ecasound command line, very simple: ` `
+Here is the ecasound command line, very simple:
 
      ecasound -i jack -o alsa
 
@@ -793,8 +758,6 @@ configures by default. But remember that dmix really sucks at small
 buffering so you have to choose a reasonably large one. I ended up using
 the following:
 
-` `
-
     # ------------------------------------------------------
     # playback PCM device: using loopback subdevice 0,0
     pcm.amix {
@@ -810,15 +773,11 @@ the following:
 This setting gives me a final Loopback latency of \~ 35ms, while dmix
 does a good job without choking.
 
-\
-
 ### Capture and Playback
 
 If you are using the complete software solution (ALSA playback and
 capture via cloop and ploop), then you can still use ecasound as an
 intermediate tool. Just fire it up in this way:
-
-` `
 
     ecasound -i alsa -o alsa
 
@@ -827,8 +786,7 @@ will allow ecasound to record the ardour click via the looped-back ploop
 audio. Then ecasound will output it to the default ALSA pcm playback
 which alsa\_in collects via the cloop client.
 
-\
- In ardour, just like the setup above, have two tracks, one receiving
+In ardour, just like the setup above, have two tracks, one receiving
 the internal ardour click directly, the other connected to the cloop
 ports. Arm the tracks for recording, enable the click, activate the
 transport. You will see audio data in both tracks, one is delayed of
@@ -853,13 +811,4 @@ need comes (unlikely).
 ### Troubleshooting
 
 If you have pulseaudio on you machine, better kill it, overwise it doesn't work.
-
-[Thorgal](/User:Thorgal "User:Thorgal") - May 3rd 2010
-
-Retrieved from
-"[http://alsa.opensrc.org/Jack\_and\_Loopback\_device\_as\_Alsa-to-Jack\_bridge](http://alsa.opensrc.org/Jack_and_Loopback_device_as_Alsa-to-Jack_bridge)"
-
-[Categories](/Special:Categories "Special:Categories"):
-[Howto](/Category:Howto "Category:Howto") |
-[Configuration](/Category:Configuration "Category:Configuration")
 
