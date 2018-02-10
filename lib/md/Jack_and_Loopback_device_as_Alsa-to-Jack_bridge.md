@@ -6,35 +6,25 @@ Jack and Loopback device as Alsa-to-Jack bridge
 Contents
 --------
 
--   [1 Introduction](#introduction)
-
--   [2 The ALSA Loopback 'Sound card'](#The_ALSA_Loopback_.27Sound_card.27)
-
+-   [1 Introduction](#id01)
+-   [2 The ALSA Loopback 'Sound card'](#id02)
     -   [2.1 Compiling snd-aloop if needed](#Compiling_snd-aloop_if_needed)
     -   [2.2 Understanding the ALSA Loopback sound card structure](#Understanding_the_ALSA_Loopback_sound_card_structure)
-
 -   [3 Building an asoundrc file](#Building_an_asoundrc_file)
-
     -   [3.1 asoundrc definition](#asoundrc_definition)
     -   [3.2 testing our new default ALSA device](#testing_our_new_default_alsa_device)
-
 -   [4 The Jack Bridge](#the_jack_bridge)
-
     -   [4.1 Creating permanent Jack clients using alsa_in and alsa_out](#Creating_permanent_Jack_clients_using_alsa_in_and_alsa_out)
     -   [4.2 Create scripts to automate bridge initialization via QjackCtl](#Create_scripts_to_automate_bridge_initialization_via_QjackCtl)
-
 -   [5 Alternative Setup: hardware and software based solution](#Alternative_Setup:_hardware_and_software_based_solution)
-
     -   [5.1 Adding extra h/w inputs in asoundrc](#Adding_extra_h.2Fw_inputs_in_asoundrc)
     -   [5.2 Testing the new ALSA capture](#Testing_the_new_ALSA_capture)
-
 -   [6 Measuring the latency introduced by the Loopback device](#Measuring_the_latency_introduced_by_the_Loopback_device)
-
     -   [6.1 Playback only](#Playback_only)
     -   [6.2 Capture and Playback](#Capture_and_Playback)
     -   [6.3 Final word](#final_word)
 
-<a id="introduction"></a><br>
+<a id="id01"></a><br>
 
 ## Introduction
 
@@ -78,8 +68,9 @@ quite buggy / unstable in many situations.
 It is not until recently, as I was fiddling with the ALSA Loopback
 device, that I saw a way to achieve what I needed.
 
-The ALSA Loopback 'Sound card'
-------------------------------
+<a id="id02"></a><br>
+
+## The ALSA Loopback 'Sound card'
 
 The ALSA Loopback sound card is a virtual soundcard that is created once
 the ALSA kernel module `snd-aloop` is loaded. This virtual soundcard
