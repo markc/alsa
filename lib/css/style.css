@@ -80,7 +80,7 @@ url('//cdn.renta.net/lib/fonts/icomoon.svg?23xten#icomoon') format('svg');font-w
 a:hover{color:#df0000;}
 a{color:#2c5871;outline:none;transition:all .25s ease;}
 body,html{min-height:100%;height:100%;}
-body{margin:4.5em 0 0 0;font-size:16px;line-height:1.5em;color:#2c5871;font-family:'Quicksand', sans-serif;font-weight:400;text-shadow:0 1px 1px rgba(0, 0, 0, 0.2);}
+body{margin:4.5em 0 0 0;font-size:16px;line-height:1.6;color:#2c5871;font-family:'Quicksand', sans-serif;font-weight:400;text-shadow:0 1px 1px rgba(0, 0, 0, 0.2);}
 html{scroll-behavior:smooth;background-attachment:fixed;background-position:center center;background-repeat:no-repeat;background-size:cover;height:100%;min-height:100%;}
 form{margin-bottom:1em;}
 footer a{color:#ffffff;text-decoration:none;}
