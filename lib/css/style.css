@@ -99,6 +99,7 @@ input#menu-toggle{display:none;}
 label.label-toggle{background:linear-gradient(to bottom, #2c5871 0%, #2c5871 20%, transparent 20%, transparent 40%, #2c5871 40%, #2c5871 60%, transparent 60%, transparent 80%, #2c5871 80%, #2c5871 100%);cursor:pointer;display:block;float:right;height:1.5em;width:1.5em;z-index:99;margin:0.5em 1em;}
 li ol > li:before{content:counters(item, ".") " ";}
 li ol > li{margin:0;padding:0.5em 0 0 0;}
+li{line-height:2em;}
 nav#topnav a, a.btn{text-decoration:none;}
 nav#topnav a.link{display:none;}
 nav#topnav{z-index:99;}
