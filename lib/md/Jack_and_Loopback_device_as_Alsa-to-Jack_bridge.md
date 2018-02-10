@@ -11,18 +11,18 @@ Contents
     -   [2.1 Compiling snd-aloop if needed](#id03)
     -   [2.2 Understanding the ALSA Loopback sound card structure](#id04)
 -   [3 Building an asoundrc file](#id05)
-    -   [3.1 asoundrc definition](#asoundrc_definition)
-    -   [3.2 testing our new default ALSA device](#testing_our_new_default_alsa_device)
--   [4 The Jack Bridge](#the_jack_bridge)
-    -   [4.1 Creating permanent Jack clients using alsa_in and alsa_out](#Creating_permanent_Jack_clients_using_alsa_in_and_alsa_out)
-    -   [4.2 Create scripts to automate bridge initialization via QjackCtl](#Create_scripts_to_automate_bridge_initialization_via_QjackCtl)
--   [5 Alternative Setup: hardware and software based solution](#Alternative_Setup:_hardware_and_software_based_solution)
-    -   [5.1 Adding extra h/w inputs in asoundrc](#Adding_extra_h.2Fw_inputs_in_asoundrc)
-    -   [5.2 Testing the new ALSA capture](#Testing_the_new_ALSA_capture)
--   [6 Measuring the latency introduced by the Loopback device](#Measuring_the_latency_introduced_by_the_Loopback_device)
-    -   [6.1 Playback only](#Playback_only)
-    -   [6.2 Capture and Playback](#Capture_and_Playback)
-    -   [6.3 Final word](#final_word)
+    -   [3.1 asoundrc definition](#id06)
+    -   [3.2 testing our new default ALSA device](#id07)
+-   [4 The Jack Bridge](#id08)
+    -   [4.1 Creating permanent Jack clients using alsa_in and alsa_out](#id09)
+    -   [4.2 Create scripts to automate bridge initialization via QjackCtl](#id10)
+-   [5 Alternative Setup: hardware and software based solution](#id11)
+    -   [5.1 Adding extra h/w inputs in asoundrc](#id12)
+    -   [5.2 Testing the new ALSA capture](#id13)
+-   [6 Measuring the latency introduced by the Loopback device](#id14)
+    -   [6.1 Playback only](#id15)
+    -   [6.2 Capture and Playback](#id16)
+    -   [6.3 Final word](#id17)
 
 <a id="id01"></a><br>
 
@@ -128,7 +128,8 @@ As you can see, I do fix indexes even though ALSA and Jack can work with
 names only. It is motivated by the special position that is index 0, the
 ALSA default device that flashplayer will try to use.
 
-<a id="id03"></a>
+<a id="id03"></a><br>
+
 ### Compiling `snd-aloop` if needed
 
 Update: it may not be needed any longer as of kernel 2.6.38 ...
@@ -252,7 +253,8 @@ ALSA installation, no problem:
     sudo cp -a ~/backup/sound /lib/modules/`uname -r`/kernel/
     sudo alsa force-reload
 
-<a id="id04"></a>
+<a id="id04"></a><br>
+
 ### Understanding the ALSA Loopback sound card structure
 
 Well, this is not too difficult to grasp. This virtual sound card
@@ -287,6 +289,8 @@ Note that the underlying goal is this: I want the audio of my jack
 system capture ports (from my RME card) to be available at the ALSA
 capture device and vice-versa: hear from my jack system playback ports
 what ALSA apps are playing back to the ALSA playback device. Tricky...
+
+<a id="id06"></a><br>
 
 ### asoundrc definition
 
@@ -447,6 +451,8 @@ buffering parameters, read on below.
       }
     }
 
+<a id="id07"></a><br>
+
 ### Testing our new default ALSA device
 
 Save this asoundrc config into `$HOME/.asoundrc` but make sure before
@@ -465,11 +471,14 @@ app using the default device we have just created will not spit error
 messages and will play along nicely. Try for example `lmms` using the
 ALSA default :)
 
-The Jack Bridge
----------------
+<a id="id08"></a><br>
+
+## The Jack Bridge
 
 OK, this is where it will get a little bit confusing because of the
 loopback nature of the virtual device ;)
+
+<a id="id09"></a><br>
 
 ### Creating permanent Jack clients using *alsa_in* and *alsa_out*
 
@@ -515,6 +524,8 @@ The beauty of it is two-fold:
 -   if jack crashes, it will bring down cloop and ploop but will not
     disrupt the ALSA apps since they only talk to the loopback soundcard
     which is *completely independent of the jack environment* :D
+
+<a id="id10"></a><br>
 
 ### Create scripts to automate bridge initialization via QjackCtl
 
@@ -576,13 +587,16 @@ the latency added by the Loopback device. I also tweaked a hybrid
 solution where the ALSA capture PCM is using a real hardware (onboard
 chip or extra soundcard). Just read below.
 
-Alternative Setup: hardware and software based solution
--------------------------------------------------------
+<a id="id11"></a><br>
+
+## Alternative Setup: hardware and software based solution
 
 As mentioned in my introduction, I happen to have an onboard chip (Intel
 HDA) but also a USB webcam with a built-in mic. It would be a shame not
 to use their recording capability in some way, especially since I tend
 to use skype from my DAW PC quite often.
+
+<a id="id12"></a><br>
 
 ### Adding extra h/w inputs in asoundrc
 
@@ -681,6 +695,8 @@ alsa_out, and added hw PCM devices on the Intel device and USB webcam.
       }
     }
 
+<a id="id13"></a><br>
+
 ### Testing the new ALSA capture
 
 This one was easy to test. I made sure that my asoundrc default card
@@ -696,11 +712,14 @@ Note that the same thing can be done with the Intel HDA capture ("intel"
 pcm capture defined in the previous asoundrc) provided that you plug a
 mic to its input jack of course :)
 
-Measuring the latency introduced by the Loopback device
--------------------------------------------------------
+<a id="id14"></a><br>
+
+## Measuring the latency introduced by the Loopback device
 
 For measuring the latency, I had to be able to provide both Jack and
 ALSA with a common audio source.
+
+<a id="id15"></a><br>
 
 ### Playback only
 
@@ -752,6 +771,8 @@ the following:
 This setting gives me a final Loopback latency of \~ 35ms, while dmix
 does a good job without choking.
 
+<a id="id16"></a><br>
+
 ### Capture and Playback
 
 If you are using the complete software solution (ALSA playback and
@@ -775,6 +796,8 @@ not bad at all for the whole purpose of the Loopback bridge.
 
 If low latency is a concern, don't use ALSA only apps, use jackified
 apps :D
+
+<a id="id17"></a><br>
 
 ### Final word
 
