@@ -6,37 +6,33 @@ Jack and Loopback device as Alsa-to-Jack bridge
 Contents
 --------
 
--   [1 Introduction](#Introduction)
--   [2 The ALSA Loopback 'Sound
-    card'](#The_ALSA_Loopback_.27Sound_card.27)
-    -   [2.1 Compiling snd-aloop if
-        needed](#Compiling_snd-aloop_if_needed)
-    -   [2.2 Understanding the ALSA Loopback sound card
-        structure](#Understanding_the_ALSA_Loopback_sound_card_structure)
+-   [1 Introduction](#introduction)
+
+-   [2 The ALSA Loopback 'Sound card'](#The_ALSA_Loopback_.27Sound_card.27)
+
+    -   [2.1 Compiling snd-aloop if needed](#Compiling_snd-aloop_if_needed)
+    -   [2.2 Understanding the ALSA Loopback sound card structure](#Understanding_the_ALSA_Loopback_sound_card_structure)
 
 -   [3 Building an asoundrc file](#Building_an_asoundrc_file)
+
     -   [3.1 asoundrc definition](#asoundrc_definition)
-    -   [3.2 testing our new default ALSA
-        device](#testing_our_new_default_ALSA_device)
+    -   [3.2 testing our new default ALSA device](#testing_our_new_default_alsa_device)
 
--   [4 The Jack Bridge](#The_Jack_Bridge)
-    -   [4.1 Creating permanent Jack clients using alsa\_in and
-        alsa\_out](#Creating_permanent_Jack_clients_using_alsa_in_and_alsa_out)
-    -   [4.2 Create scripts to automate bridge initialization via
-        QjackCtl](#Create_scripts_to_automate_bridge_initialization_via_QjackCtl)
+-   [4 The Jack Bridge](#the_jack_bridge)
 
--   [5 Alternative Setup: hardware and software based
-    solution](#Alternative_Setup:_hardware_and_software_based_solution)
-    -   [5.1 Adding extra h/w inputs in
-        asoundrc](#Adding_extra_h.2Fw_inputs_in_asoundrc)
-    -   [5.2 Testing the new ALSA
-        capture](#Testing_the_new_ALSA_capture)
+    -   [4.1 Creating permanent Jack clients using alsa_in and alsa_out](#Creating_permanent_Jack_clients_using_alsa_in_and_alsa_out)
+    -   [4.2 Create scripts to automate bridge initialization via QjackCtl](#Create_scripts_to_automate_bridge_initialization_via_QjackCtl)
 
--   [6 Measuring the latency introduced by the Loopback
-    device](#Measuring_the_latency_introduced_by_the_Loopback_device)
+-   [5 Alternative Setup: hardware and software based solution](#Alternative_Setup:_hardware_and_software_based_solution)
+
+    -   [5.1 Adding extra h/w inputs in asoundrc](#Adding_extra_h.2Fw_inputs_in_asoundrc)
+    -   [5.2 Testing the new ALSA capture](#Testing_the_new_ALSA_capture)
+
+-   [6 Measuring the latency introduced by the Loopback device](#Measuring_the_latency_introduced_by_the_Loopback_device)
+
     -   [6.1 Playback only](#Playback_only)
     -   [6.2 Capture and Playback](#Capture_and_Playback)
-    -   [6.3 Final word](#Final_word)
+    -   [6.3 Final word](#final_word)
 
 Introduction
 ------------
@@ -53,7 +49,7 @@ has the slight disadvantage of making non jackified applications
 unusable.
 
 So how can one provide a permanent bridge between non jackified
-applications and Jack ? Well, there are different ways. One can be
+applications and Jack\? Well, there are different ways. One can be
 purely hardware: enable another soundcard (e.g the onboard sound chip)
 and physically link it to your DAW sound-card if you are like me with a
 dedicated audio h/w for DAW operations. Let this extra soundcard be the
@@ -165,7 +161,7 @@ leave this to you as this is very distro dependent. In debian based
 distros, the package is called something like `linux-headers-xxx` and
 must match the installed kernel (package `linux-image-xxx`).
 
-Time to make a backup of the installed kernel modules. Example: ` `
+Time to make a backup of the installed kernel modules. Example;
 
     cd
     mkdir backup  
@@ -178,14 +174,14 @@ based distros, you can check that you have a package called
 
     dpkg -l build-essential
 
-If not, just get it: ` `
+If not, just get it:
 
     sudo apt-get install build-essential
 
 Now grab the alsa-driver source code (same version as your installed
 ALSA, in my case 1.0.23 which I will use in my description) from the
 [The ALSA website](http://www.alsa-project.org), uncompress, untar it
-and cd to the alsa-driver top dir. Here is a command summary
+and cd to the alsa-driver top dir. Here is a command summary ...
 
     cd
     mkdir source
@@ -357,9 +353,7 @@ documentation](http://www.alsa-project.org/alsa-doc/alsa-lib/pcm_plugins.html).
 
 Some html5 browsers (i.e. [Firefox 30](https://bugzilla.mozilla.org/show_bug.cgi?id=812900#c14); Chrome 38) will fail to open the pcm.!default device for audio playback. This can be fixed by using pcm.card0 instead:
 
-    # ------------------------------------------------------
     # default device
-
     pcm.card0 {
       type plug
       slave.pcm "aduplex"
@@ -368,14 +362,13 @@ Some html5 browsers (i.e. [Firefox 30](https://bugzilla.mozilla.org/show_bug.cgi
 Here is an example applicable to my DAW. I left some notes so you
 understand the extra stuff I also removed unnecessary dsnoop's and
 dmix's because when you analyse things a bit more, you realize that some
-of the ALSA PCMs will only be used by one single client (alsa\_in/out)
+of the ALSA PCMs will only be used by one single client (alsa_in/out)
 so there is no need to use dmix / dsnoop. Dmix only makes sense for the
 ALSA playback PCM because you can have more than one client outputting
 to ALSA at the same time. Anyway, note the hardware parameters I have
 added so that it matches my RME Multiface II requirements. For the dmix
 buffering parameters, read on below.
 
-    # ------------------------------------------------------
     # hardware 0,0 : used for ALSA playback
     pcm.loophw00 {
       type hw
@@ -386,7 +379,6 @@ buffering parameters, read on below.
       rate 96000
     }
 
-    # ------------------------------------------------------
     # playback PCM device: using loopback subdevice 0,0
     # Don't use a buffer size that is too small. Some apps 
     # won't like it and it will sound crappy 
@@ -401,7 +393,6 @@ buffering parameters, read on below.
       }
     }
 
-    # ------------------------------------------------------
     # software volume
     pcm.asoftvol {
       type softvol
@@ -413,7 +404,6 @@ buffering parameters, read on below.
       max_dB   0.0
     }
 
-    # ------------------------------------------------------
     # for jack alsa_in: looped-back signal at other ends
     pcm.cloop {
       type hw
@@ -424,8 +414,6 @@ buffering parameters, read on below.
       rate 96000
     }
 
-    # ======================================================
-    # ------------------------------------------------------
     # hardware 0,1 : used for ALSA capture
     pcm.loophw01 {
       type hw
@@ -436,7 +424,6 @@ buffering parameters, read on below.
       rate 96000
     }
 
-    # ------------------------------------------------------
     # for jack alsa_out: looped-back signal at other end
     pcm.ploop {
       type hw
@@ -447,8 +434,6 @@ buffering parameters, read on below.
       rate 96000
     }
 
-    # ======================================================
-    # ------------------------------------------------------
     # duplex device combining our PCM devices defined above
     pcm.aduplex {
       type asym
@@ -456,7 +441,6 @@ buffering parameters, read on below.
       capture.pcm "loophw01"
     }
 
-    # ------------------------------------------------------
     # default device
     pcm.!default {
       type plug
@@ -468,7 +452,7 @@ buffering parameters, read on below.
       }
     }
 
-### testing our new default ALSA device
+### Testing our new default ALSA device
 
 Save this asoundrc config into `$HOME/.asoundrc` but make sure before
 that you are not overwriting an existing asoundrc file (back up whatever
@@ -492,12 +476,12 @@ The Jack Bridge
 OK, this is where it will get a little bit confusing because of the
 loopback nature of the virtual device ;)
 
-### Creating permanent Jack clients using *alsa\_in* and *alsa\_out*
+### Creating permanent Jack clients using *alsa_in* and *alsa_out*
 
 Since we used subdevice 0,0 for playback and subdevice 0,1 for capture,
 remember that signals from these subdevices will be available by
 loopback to the corresponding subdevices, respectively 1,0 and 1,1 in
-this case. So the trick for jack is to use alsa\_in and alsa\_out on the
+this case. So the trick for jack is to use alsa_in and alsa_out on the
 latter subdevices :) Brilliant ins't it ? :D
 
 Let's do it from the terminal
@@ -514,7 +498,7 @@ subdevice 1,0, which `alsa_in` listens to. The "cloop" client we created
 can now be connected to the jack system output ports and o miracle, you
 will hear your ALSA app :)
 
-In order to avoid the warning messages from alsa\_in/out, you can add
+In order to avoid the warning messages from alsa_in/out, you can add
 the relevant parameters, e.g. (my case):
 
      alsa_in -j cloop -dcloop -n 2 -p 256 -r 96000
@@ -564,7 +548,7 @@ their connection to jack system ports. Here is my script:
     # done
     exit 0
 
-*Note that I used `-q 1` as an option to alsa\_in/out. This has to do
+*Note that I used `-q 1` as an option to alsa_in/out. This has to do
 with the resampling quality. At 2.3ms latency, 96kHz s.r. on a 2 x 2.4
 GHz dual core CPU system and using Jack2, I get a low CPU usage (1-2%)
 and the quality is reasonable. If you push it to 2, 3 or 4, the CPU will
@@ -611,7 +595,7 @@ So instead of using the Loopback device for the ALSA capture (all the
 stuff related to "ploop" in the previous asoundrc), I simply declared
 the extra h/w in the asoundrc. So I removed all the ploop stuff
 including the now useless Loopback subdevices used for ALSA capture and
-alsa\_out, and added hw PCM devices on the Intel device and USB webcam.
+alsa_out, and added hw PCM devices on the Intel device and USB webcam.
 
     # ------------------------------------------------------
     # hardware 0,0 : used for ALSA playback
@@ -725,7 +709,7 @@ ALSA with a common audio source.
 
 ### Playback only
 
-First, I fired up jackd and alsa\_in on "cloop" (just as before). Then,
+First, I fired up jackd and alsa_in on "cloop" (just as before). Then,
 I used ecasound as the middle-man for allowing the measuring of the
 eventual delay in ardour (which I am comfortable with, you can of course
 use another jack enabled recording software if you want).
@@ -751,7 +735,7 @@ ports to ecasound's input ports, and connect the click ports to one of
 the ardour tracks, the other one should still receive the cloop client
 data. If you fiddle with the dmix parameters in the .asoundrc, you will
 obtain various delays. It is therefore up to you to decide how the
-period\_size and buffer\_size params must be set.
+period_size and buffer_size params must be set.
 
 A 120 ms delay is not bad at all considering the huge buffering dmix
 configures by default. But remember that dmix really sucks at small
@@ -784,7 +768,7 @@ intermediate tool. Just fire it up in this way:
 In qjackctl, connect the ardour click ports to the "ploop" ports. This
 will allow ecasound to record the ardour click via the looped-back ploop
 audio. Then ecasound will output it to the default ALSA pcm playback
-which alsa\_in collects via the cloop client.
+which alsa_in collects via the cloop client.
 
 In ardour, just like the setup above, have two tracks, one receiving
 the internal ardour click directly, the other connected to the cloop
@@ -802,7 +786,7 @@ apps :D
 I hope all this was clear enough. The idea behind this was to use a h/w
 capture device instead of the Loopback device. This reduces the role of
 the Loopback device to ALSA playback only, and removes the need of
-alsa\_out, sparing some CPU and jack process cycles. At the moment, I am
+alsa_out, sparing some CPU and jack process cycles. At the moment, I am
 using my USB webcam for capture because I only need ALSA capture for
 skype. The Intel HDA is available as well but I don't really need it. It
 is connected to my patch panel though, so I can always use it if the
