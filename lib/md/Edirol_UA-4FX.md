@@ -1,10 +1,6 @@
 Edirol UA-4FX
 =============
 
-### From the ALSA wiki
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
 [pictures](http://www.rolandus.com/products/productdetails.aspx?ObjectId=758&ParentId=114)
 
 *The format of this page is shamelessly copied from the [Edirol
@@ -48,7 +44,7 @@ below](/Edirol_UA-4FX#Getting_Advanced_mode_to_work "Edirol UA-4FX").
 *Unfortunately*, Alsa has little control over this device.
 
 In fact, it is not a problem of operating systems (Linux / FreeBSD /
-Window\$), but rather a hardware issue. For example, Input level, Output
+Window), but rather a hardware issue. For example, Input level, Output
 level, mixing, even sample rate are controlled at the hardware level.
 There is no software control. Some users may like this old-fashion way
 of managing a sound card. Others may dislike it. Analyse your needs
@@ -181,22 +177,18 @@ recognise the audio device. Just plug and play.
 GNU/Linux is a secure system. To play sound, you need audio system
 rights. To query your systems rights:
 
-`  `
-
     $groups
     my_username adm disk dialout fax cdrom floppy tape dip video plugdev powerdev scanner
 
 In this example, I don't have enough rights to play/record sound. To
 assign rights:
 
-Become root (system administrator): `  `
+Become root (system administrator):
 
     $su
     Password:
 
 Enter the administrator password and then:
-
-`  `
 
     adduser my_username audio
 
@@ -210,8 +202,6 @@ device using the `plughw:0,0`, but it is not very convenient. We
 recommend using the alphanumeric name of the device. To query the name
 of your device, type:
 
-` `
-
     $cat /proc/asound/cards
      0 [UA4FX          ]: USB-Audio - UA-4FX
                           EDIROL UA-4FX at usb-0000:00:0b.0-6, full speed
@@ -223,7 +213,7 @@ Here, you should use `plughw:UA4FX` rather than `plughw:0,0`
 ### Testing sound output
 
 Test the card output. This command plays a woman voice on 2 channels
-("Front Right", "Front Left"): ` `
+("Front Right", "Front Left"):
 
     speaker-test -c2 -D plughw:UA4FX -twav
 
@@ -232,49 +222,45 @@ Test the card output. This command plays a woman voice on 2 channels
 You can play any sound and it will be played with a sample rate of 44.1
 Khz.
 
-To play a sound: ` `
+To play a sound:
 
     aplay -D plughw:UA4FX foo.wav
 
 For a better understanding, it is recommended to play in verbose mode:
-` `
 
     aplay -v -D plughw:UA4FX foo.wav
 
 Several lines of text will explain what Alsa is doing:
 
-` `
-
     Playing WAVE 'foo.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
     Plug PCM: Hardware PCM card 0 'UA-4FX' device 0 subdevice 0
     Its setup is:
-      stream       : PLAYBACK
-      access       : RW_INTERLEAVED
-      format       : S16_LE
-      subformat    : STD
-      channels     : 2
-      rate         : 44100
-      exact rate   : 44100 (44100/1)
-      msbits       : 16
-      buffer_size  : 22050
-      period_size  : 5513
-      period_time  : 125011
-      tick_time    : 4000
-      tstamp_mode  : NONE
-      period_step  : 1
-      sleep_min    : 0
-      avail_min    : 5513
-      xfer_align   : 5513
-      start_threshold  : 16539
-      stop_threshold   : 22050
-      silence_threshold: 0
-      silence_size : 0
-      boundary     : 6206523236469964800
+      stream            : PLAYBACK
+      access            : RW_INTERLEAVED
+      format            : S16_LE
+      subformat         : STD
+      channels          : 2
+      rate              : 44100
+      exact rate        : 44100 (44100/1)
+      msbits            : 16
+      buffer_size       : 22050
+      period_size       : 5513
+      period_time       : 125011
+      tick_time         : 4000
+      tstamp_mode       : NONE
+      period_step       : 1
+      sleep_min         : 0
+      avail_min         : 5513
+      xfer_align        : 5513
+      start_threshold   : 16539
+      stop_threshold    : 22050
+      silence_threshold : 0
+      silence_size      : 0
+      boundary          : 6206523236469964800
 
 The sound file has a 44.100 Hz sample rate and 16 bits of resolution.
 
 When playing two sounds at the same time, an error message is displayed:
-` `
 
     aplay: main:546: audio open error: Device or resource busy
 
@@ -287,41 +273,39 @@ mode](/Edirol_UA-4FX#Getting_Advanced_mode_to_work "Edirol UA-4FX").
 With the UA-4FX device set to Advanced OFF, you can use the `arecord`
 utility from the Alsa package to record any sound from the microphone:
 
-`  `
-
-    $arecord -f cd -t wav -D plughw:UA4FX foobar.wav
+    arecord -f cd -t wav -D plughw:UA4FX foobar.wav
 
 For a better understanding, try the same command in verbose mode: ` `
 
     arecord -v -f cd -t wav -D plughw:UA4FX foo.wav
 
-The resulting message: ` `
+The resulting message:
 
     Recording WAVE 'foo.wav' : Signed 16 bit Little Endian, Rate 44100 Hz, Stereo
     Plug PCM: Hardware PCM card 1 'UA-4FX' device 0 subdevice 0
     Its setup is:
-      stream       : CAPTURE
-      access       : RW_INTERLEAVED
-      format       : S16_LE
-      subformat    : STD
-      channels     : 2
-      rate         : 44100
-      exact rate   : 44100 (44100/1)
-      msbits       : 16
-      buffer_size  : 22050
-      period_size  : 5513
-      period_time  : 125011
-      tick_time    : 4000
-      tstamp_mode  : NONE
-      period_step  : 1
-      sleep_min    : 0
-      avail_min    : 5513
-      xfer_align   : 5513
-      start_threshold  : 1
-      stop_threshold   : 22050
-      silence_threshold: 0
-      silence_size : 0
-      boundary     : 6206523236469964800
+      stream            : CAPTURE
+      access            : RW_INTERLEAVED
+      format            : S16_LE
+      subformat         : STD
+      channels          : 2
+      rate              : 44100
+      exact rate        : 44100 (44100/1)
+      msbits            : 16
+      buffer_size       : 22050
+      period_size       : 5513
+      period_time       : 125011
+      tick_time         : 4000
+      tstamp_mode       : NONE
+      period_step       : 1
+      sleep_min         : 0
+      avail_min         : 5513
+      xfer_align        : 5513
+      start_threshold   : 1
+      stop_threshold    : 22050
+      silence_threshold : 0
+      silence_size      : 0
+      boundary          : 6206523236469964800
 
 The Edirol UA-4FX is able to record in 24 bits, at the sample rate of 96
 Khz.
@@ -329,8 +313,6 @@ Khz.
 With [Advanced mode
 enabled](/Edirol_UA-4FX#Getting_Advanced_mode_to_work "Edirol UA-4FX"),
 playing a recorded sound at 96 Khz would not work:
-
-` `
 
     aplay -v -D plughw:UA4FX foobar.wav
     aplay: main:550: audio open error: No such file or directory
@@ -342,63 +324,63 @@ the SAMPLE RATE switch is set to 96 kHz RECORD. Try changing it to 96
 kHz PLAY. You will then need to [cold or hot
 reboot](/Edirol_UA-4FX#Cold.2FHot_reboot "Edirol UA-4FX").
 
-Now you should be able to play the sound: ` `
+Now you should be able to play the sound:
 
     aplay -v -D plughw:UA4FX foobar.wav
 
 Changing the switch (and enabling [Advanced
 mode](/Edirol_UA-4FX#Getting_Advanced_mode_to_work "Edirol UA-4FX")) is
-all that is needed to see something like this: ` `
+all that is needed to see something like this:
 
     Playing WAVE 'foobar.wav' : Signed 16 bit Little Endian, Rate 96000 Hz, Stereo
     Plug PCM: Linear conversion PCM (S24_3LE)
     Its setup is:
-     stream       : PLAYBACK
-     access       : RW_INTERLEAVED
-     format       : S16_LE
-     subformat    : STD
-     channels     : 2
-     rate         : 96000
-     exact rate   : 96000 (96000/1)
-     msbits       : 16
-     buffer_size  : 48000
-     period_size  : 12000
-     period_time  : 125000
-     tick_time    : 1000
-     tstamp_mode  : NONE
-     period_step  : 1
-     sleep_min    : 0
-     avail_min    : 12000
-     xfer_align   : 12000
-     start_threshold  : 48000
-     stop_threshold   : 48000
-     silence_threshold: 0
-     silence_size : 0
-     boundary     : 6755399441055744000
+     stream            : PLAYBACK
+     access            : RW_INTERLEAVED
+     format            : S16_LE
+     subformat         : STD
+     channels          : 2
+     rate              : 96000
+     exact rate        : 96000 (96000/1)
+     msbits            : 16
+     buffer_size       : 48000
+     period_size       : 12000
+     period_time       : 125000
+     tick_time         : 1000
+     tstamp_mode       : NONE
+     period_step       : 1
+     sleep_min         : 0
+     avail_min         : 12000
+     xfer_align        : 12000
+     start_threshold   : 48000
+     stop_threshold    : 48000
+     silence_threshold : 0
+     silence_size      : 0
+     boundary          : 6755399441055744000
     Slave: Hardware PCM card 0 'UA-4FX' device 0 subdevice 0
     Its setup is:
-     stream       : PLAYBACK
-     access       : MMAP_INTERLEAVED
-     format       : S24_3LE
-     subformat    : STD
-     channels     : 2
-     rate         : 96000
-     exact rate   : 96000 (96000/1)
-     msbits       : 24
-     buffer_size  : 48000
-     period_size  : 12000
-     period_time  : 125000
-     tick_time    : 1000
-     tstamp_mode  : NONE
-     period_step  : 1
-     sleep_min    : 0
-     avail_min    : 12000
-     xfer_align   : 12000
-     start_threshold  : 48000
-     stop_threshold   : 48000
-     silence_threshold: 0
-     silence_size : 0
-     boundary     : 6755399441055744000
+     stream            : PLAYBACK
+     access            : MMAP_INTERLEAVED
+     format            : S24_3LE
+     subformat         : STD
+     channels          : 2
+     rate              : 96000
+     exact rate        : 96000 (96000/1)
+     msbits            : 24
+     buffer_size       : 48000
+     period_size       : 12000
+     period_time       : 125000
+     tick_time         : 1000
+     tstamp_mode       : NONE
+     period_step       : 1
+     sleep_min         : 0
+     avail_min         : 12000
+     xfer_align        : 12000
+     start_threshold   : 48000
+     stop_threshold    : 48000
+     silence_threshold : 0
+     silence_size      : 0
+     boundary          : 6755399441055744000
 
 Remember, at 96.000 Khz, you can either play OR record, but not both.
 
@@ -425,8 +407,6 @@ does not support it.
 
 `$alsamixer -c 0` to use mixer settings on card 0 will return:
 
-` `
-
     no mixer elems found
 
 Unfortunately these is no software control over the hardware mixers on
@@ -438,8 +418,6 @@ Fortunately, Alsa offers the [softvol](/Softvol "Softvol")
 control. We will also define this control as the default mixer.
 
 Here is my first try:
-
-` `
 
     pcm.!default {
        type             plug
@@ -457,8 +435,6 @@ Here is my first try:
     }
 
 Let us have a look at our software mixer:
-
-` `
 
     $amixer
     Simple mixer control 'SoftMaster',0
@@ -483,8 +459,6 @@ because of the muted channel with noise.
 A simple solution is to [record from left and right input channels
 seperately](/Dsnoop#Recording_from_left_or_right_channel "Dsnoop"), as
 explained in the [dsnoop](/Dsnoop "Dsnoop") howto.
-
-` `
 
     pcm.record_left {
        type        dsnoop
@@ -523,7 +497,6 @@ With the Edirol UA-4FX in Advanced mode off, you can play 16 bits,
 44.100 Hz digital output.
 
 Let us try Alsa utility [speaker-test](/Speaker-test "Speaker-test"):
-`  `
 
     speaker-test -c 2 -D softvol0 -twav
 
@@ -535,7 +508,7 @@ Connect an optical cable:
 In the mixer of the Terratec Aureon, select `Input 2` and check
 `IEC958 In`.
 
-Record the digital stream using the following command: `  `
+Record the digital stream using the following command:
 
     arecord -v -f S16_LE -c 2 -D plughw:1,0 foobar.wav
 
@@ -558,13 +531,13 @@ UA-4FX; you will need to unplug and plug in the device for the change to
 take effect.
 
 If MIDI is working, you should see a "raw midi" device for the UA-4FX in
-/proc/asound/devices: ` `
+/proc/asound/devices:
 
     $ grep midi /proc/asound/devices
       8: [ 0- 0]: raw midi
 
 Also, /proc/asound/card0/midi0 should exist (assuming the UA-4FX is the
-0th audio device): ` `
+0th audio device):
 
     $ cat /proc/asound/card0/midi0
     UA-4FX
@@ -599,7 +572,7 @@ The following section may help Alsa hackers:
 ### cat/proc/bus/usb/devices
 
 Please ignore the OHCI Host Controller and USB Optical Mouse listed in
-my /proc/bus/usb/devices ` `
+my /proc/bus/usb/devices
 
     $cat /proc/bus/usb/devices
 
@@ -638,8 +611,6 @@ my /proc/bus/usb/devices ` `
 
 ### cat /proc/asound/devices
 
-`  `
-
     $cat /proc/asound/devices
      2:        : timer
      7:        : sequencer
@@ -649,23 +620,17 @@ my /proc/bus/usb/devices ` `
 
 ### cat /proc/asound/cards
 
-` `
-
     $cat /proc/asound/cards
     0 [UA4FX          ]: USB-Audio - UA-4FX
                          EDIROL UA-4FX at usb-0000:00:0b.0-6, full speed
 
 ### aplay -l
 
-` `
-
     $aplay -l
     **** List of PLAYBACK Hardware Devices ****
     card 1: UA4FX [UA-4FX], device 0: USB Audio [USB Audio]
       Subdevices: 1/1
       Subdevice #0: subdevice #0
-
-` `
 
     $aplay -L
     default:CARD=UA4FX
@@ -711,7 +676,7 @@ the switch is set to AUTO. (When it is set to ON, inputs are always sent
 to outputs.)
 
 First, I checked /proc/bus/usb/devices. (I'm leaving out the OHCI hub
-and USB Optical Mouse) ` `
+and USB Optical Mouse)
 
     $cat /proc/bus/usb/devices
     T:  Bus=01 Lev=01 Prnt=01 Port=05 Cnt=02 Dev#=  5 Spd=12  MxCh= 0
@@ -741,7 +706,7 @@ I made a patch, which works on linux-2.6.24 and linux-2.6.25. It looks
 like tiwai included it in 2.6.28-rc3. Thanks! So instead of using the
 patch on this page, please upgrade your kernel to linux-2.6.28 or later.
 
-When I load snd\_usb\_audio now, I get the following in dmesg: ` `
+When I load snd\_usb\_audio now, I get the following in dmesg:
 
     $tail /var/log/dmesg
     [ 2459.843069] ALSA sound/usb/usbmidi.c:1406: switching to altsetting 1 with int ep
@@ -749,7 +714,7 @@ When I load snd\_usb\_audio now, I get the following in dmesg: ` `
     [ 2459.844751] usbcore: registered new interface driver snd-usb-audio
 
 The snd\_usb\_audio driver correctly detects the playback and capture
-sample rate: ` `
+sample rate:
 
     $cat /proc/asound/cards
      0 [UA4FX          ]: USB-Audio - UA-4FX
@@ -816,7 +781,7 @@ sample rate: ` `
     tick_time: 4000
 
 Switching to 48 kHz playback/recording, /proc/bus/usb/devices has a
-third alternate (Alt=2) for interface 0, and it has 1 endpoint: ` `
+third alternate (Alt=2) for interface 0, and it has 1 endpoint:
 
     C:* #Ifs= 3 Cfg#= 1 Atr=80 MxPwr=360mA
     I:* If#= 0 Alt= 0 #EPs= 0 Cls=ff(vend.) Sub=02 Prot=02 Driver=(none)
@@ -827,14 +792,12 @@ third alternate (Alt=2) for interface 0, and it has 1 endpoint: ` `
     I:* If#= 1 Alt= 0 #EPs= 0 Cls=ff(vend.) Sub=02 Prot=01 Driver=(none)
     I:  If#= 1 Alt= 1 #EPs= 1 Cls=ff(vend.) Sub=02 Prot=01 Driver=(none)
 
-So in create\_ua700\_ua25\_quirk() there's a change to the test for
+So in create_ua700_ua25_quirk() there's a change to the test for
 altsettings. (It's in the patch, above.)
 
 Obviously, at 96 kHz the interfaces list is quite different. But
 everything is detected fine, just like the UA-25. Tested MIDI detection
 at 96 kHz RECORD, PLAY, 48 kHz, and 44.1 kHz, just fine:
-
-` `
 
     $cat /proc/asound/devices 
       2:        : timer
@@ -851,7 +814,7 @@ at 96 kHz RECORD, PLAY, 48 kHz, and 44.1 kHz, just fine:
     Input 0
       Rx bytes     : 0
 
-Every once in a while, the UA-4FX initializes in an odd state: ` `
+Every once in a while, the UA-4FX initializes in an odd state:
 
     $cat /proc/bus/usb/devices
     T:  Bus=01 Lev=01 Prnt=01 Port=05 Cnt=02 Dev#= 13 Spd=12  MxCh= 0
@@ -865,8 +828,6 @@ Every once in a while, the UA-4FX initializes in an odd state: ` `
 
 Here is a patch for /usr/src/linux-2.6.24/sound/usb/usbaudio.c and
 usbquirks.h. I have tested it on linux-2.6.24 and linux-2.6.25:
-
-` `
 
     Add Alsa support for Roland Edirol UA-4FX in Advanced mode
     (for MIDI support and sample rates of 48 kHz and 96 kHz)
@@ -941,17 +902,10 @@ usbquirks.h. I have tested it on linux-2.6.24 and linux-2.6.25:
         /* Roland SH-201 */
         USB_DEVICE(0x0582, 0x00ad),
 
-\
 
 See also
 --------
 
 -   vendor link:
     [https://www.roland.com/global/support/by_product/ua-4fx/](https://www.roland.com/global/support/by_product/ua-4fx/)
-
-Retrieved from
-"[http://alsa.opensrc.org/Edirol\_UA-4FX](http://alsa.opensrc.org/Edirol_UA-4FX)"
-
-[Category](/Special:Categories "Special:Categories"): [Sound
-cards](/Category:Sound_cards "Category:Sound cards")
 
