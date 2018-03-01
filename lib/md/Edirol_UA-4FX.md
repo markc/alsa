@@ -947,7 +947,7 @@ See also
 --------
 
 -   vendor link:
-    [http://www.edirol.net/products/en/UA-4FX](http://www.edirol.net/products/en/UA-4FX)
+    [https://www.roland.com/global/support/by_product/ua-4fx/](https://www.roland.com/global/support/by_product/ua-4fx/)
 
 Retrieved from
 "[http://alsa.opensrc.org/Edirol\_UA-4FX](http://alsa.opensrc.org/Edirol_UA-4FX)"
