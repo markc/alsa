@@ -1,21 +1,6 @@
 JACK
 ====
 
-### From the ALSA wiki
-
-(Redirected from [Jack](?title=Jack&redirect=no "Jack"))
-
-Jump to: [navigation](#mw-head), [search](#p-search)
-
-Contents
---------
-
--   [1 What is JACK?](#What_is_JACK.3F)
--   [2 Jack and audio mixing](#Jack_and_audio_mixing)
--   [3 How to use oss2jack and Skype](#How_to_use_oss2jack_and_Skype)
--   [4 More JACK-specific documentation in this
-    Wiki](#More_JACK-specific_documentation_in_this_Wiki)
-
 ### What is JACK?
 
 Jack is a low-latency audio server that can connect the input and
@@ -30,8 +15,6 @@ An example of use, first start jack then start
 in this case) and thirdly, start [ecasound](/Ecasound "Ecasound") to
 record directly in [ogg](/Ogg "Ogg") format.
 
-` `
-
     jackd -d alsa
     alsaplayer -i text -o jack -s somafm http://somafm.com/groovesalad.pls
     ecasound -i:jack_auto,somafm -o:somafm.ogg
@@ -45,8 +28,6 @@ if you want to mix several audio streams in software for output, the
 streams must talk to jackd. To force jackd to use dmix instead, allowing
 other apps to function as normal (but adding latency to jack) it was
 suggested the following command be used:
-
-` `
 
     jackd -d alsa -P default :0
 
@@ -70,13 +51,9 @@ that enables you to choose the /dev/dspXX to use for in put and
 /dev/dspYY to use for output (and /dev/mixerXX to be controlled by
 skype)Once installed, start jack, then
 
-` `
-
     oss2jack -n 100
 
 then
-
-` `
 
     MICDEV=/dev/dsp100 \
     SPEAKERDEV=/dev/dsp100 \
@@ -88,10 +65,4 @@ and the trick is done!
 
 -   [SurroundSound](/SurroundSound "SurroundSound")
 -   [jack (plugin)](/Jack_(plugin) "Jack (plugin)")
-
-Retrieved from
-"[http://alsa.opensrc.org/JACK](http://alsa.opensrc.org/JACK)"
-
-[Category](/Special:Categories "Special:Categories"):
-[Software](/Category:Software "Category:Software")
 
