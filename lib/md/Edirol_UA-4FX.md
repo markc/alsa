@@ -426,7 +426,7 @@ Here is my first try:
     pcm.softvol {
        type            softvol
        slave {
-           pcm         "pasymed"
+           pcm         "plughw:UA4FX"
        }
        control {
            name        "SoftMaster"
