@@ -160,7 +160,7 @@ mixer devices will be listed.
     /proc/asound/oss/sndstat (RO)
      /dev/sndstat compatible list
 
-### The `/proc/sound/cardX/` directory
+### The `/proc/asound/cardX/` directory
 
 ` `
 
