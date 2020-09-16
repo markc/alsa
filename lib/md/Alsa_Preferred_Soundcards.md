@@ -215,6 +215,9 @@ MK.2](/Terratec_Aureon_5.1_USB_MK.2 "Terratec Aureon 5.1 USB MK.2")
         Matrix.
     -   On the cheaper end of USB sound (\$100US list price, \$85US at
         Newegg
+        
+-   [PCIE SOUND BLASTERX AE-5](https://us.creative.com/p/sound-blaster/sound-blasterx-ae-5)
+    -   Currently testing but seems to work now. NOTE: at least on Fedora it is required to have alsa-firmware installed and select the correct profile (5.1 analog out + stereo analog input) with e.g. pavucontrol-qt 
 
 ### Alsa support
 
