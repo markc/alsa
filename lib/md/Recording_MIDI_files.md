@@ -31,7 +31,8 @@ creating complex music. There is also the *[vkeybd](/Vkeybd "Vkeybd")*
 utility which provides a virtual MIDI piano keyboard which you can
 record from while you play the virtual piano (either by repeatedly
 mouseclicking on the piano notes or by using keyboard shortcuts for the
-different notes)
+different notes) and similarly a virtual guitar *[vguitar](/Vguitar "Vguitar")*
+utility.
 
 Retrieved from
 "[http://alsa.opensrc.org/Recording\_MIDI\_files](http://alsa.opensrc.org/Recording_MIDI_files)"
