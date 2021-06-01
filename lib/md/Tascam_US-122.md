@@ -30,7 +30,7 @@ IMPORTANT: Tascam US-122 and US-122L are NOT the same
 -----------------------------------------------------
 
 If you are looking for US-122L support check
-[[1]](http://www.pps.jussieu.fr/~smimram/tascam/).
+[[1]](http://www.lix.polytechnique.fr/Labo/Samuel.Mimram/misc/tascam/).
 
 Tascam US-122 on Debian and Ubuntu
 ----------------------------------
