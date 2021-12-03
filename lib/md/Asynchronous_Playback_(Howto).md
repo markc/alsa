@@ -312,9 +312,9 @@ buffer size and period size:
     snd_pcm_hw_params_set_buffer_size_near (pcm_handle, hw_params, &buffer_size);
     snd_pcm_hw_params_set_period_size_near (pcm_handle, hw_params, &period_size, NULL);
 
-Both of these take the size in bytes. The period size is what I
+Both of these take the size in frames. The period size is what I
 described earlier in the section about interleaved and non-interleaved.
-Besides specifying the size in bytes you can also specify them in
+Besides specifying the size in frames you can also specify them in
 nanoseconds using the hardware parameters buffer\_time and period\_time.
 
 There's a whole lot of other hardware variables you can alter, but
@@ -414,7 +414,7 @@ function instead. Other than that, it works exactly the same.
 
 "MyBuffer" in the above piece of code is a pointer to wherever the data
 is you want to write to the device. and the last parameter is the size
-in bytes of the data to write.
+in frames of the data to write.
 
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   **Note:**Two times the period size seems to be a good initial write size? Going below this results in a buffer underrun (broken pipe error on any subsequent function calls) and going over it seems to trigger "file descriptor in a bad state" errors.
@@ -526,7 +526,7 @@ however, this would simply return NULL.
 Another new function we see here is
 [snd\_pcm\_avail\_update](?title=Snd_pcm_avail_update&action=edit&redlink=1 "Snd pcm avail update (page does not exist)").
 This function takes a device handle, and returns the amount of available
-bytes that can be written to the device. As you can see, we use this in
+frames that can be written to the device. As you can see, we use this in
 our loop too keep writing chunks to the buffer until it's full.
 
 That is basically all there is to the callback.
