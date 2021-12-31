@@ -288,7 +288,7 @@ anything else, these equate to the following:
         device](?title=Duplex_device&action=edit&redlink=1 "Duplex device (page does not exist)")
 
 -   First PCM recording ADC
-    -   What it does: Plays sound
+    -   What it does: Captures sound
     -   The device file looks like:
     -   `crw-rw----  1 root audio 116,  16 Mar  4 21:30 pcmC0D0c`
     -   What ALSA calls it: the recording half of `hw:0,0`, which is a
